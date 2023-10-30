@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #323232;
+    font-family: "IBM Plex Mono", monospace;
+    text-align: center;
+    color: #d56aa0;
+}
+div.box {
+    background-color: #2b2b2b;
+    border-radius: 16px;
+    width: 100%;
+    margin-bottom: 8px;
+}
+a {
+    text-decoration: underline dashed;
+    color: #c43f80;
+}
+.text-xl {
+    color: #fafafa;
+}
+box-icon {
+    fill: currentColor;
+}
