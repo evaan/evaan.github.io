@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.0.8",
-    "boxicons": "^2.1.4",
     "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.3.4"
   },

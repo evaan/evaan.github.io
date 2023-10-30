@@ -3,12 +3,11 @@ import App from './App.vue'
 
 import "./styles/main.css"
 import "@fontsource/ibm-plex-mono/latin-400.css"
-import "boxicons"
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { SiAstro, SiRos } from "oh-vue-icons/icons";
+import { SiAstro, SiRos, SiVuedotjs, SiTailwindcss, SiHtml5, SiReact, SiTypescript, SiGithub, SiJavascript, SiLinux, SiCplusplus, SiPython, SiLinkedin, SiDiscord, HiLink, HiSolidCode, HiSolidGlobeAlt, MdMonitorRound } from "oh-vue-icons/icons";
 
-addIcons(SiAstro, SiRos);
+addIcons(SiAstro, SiRos, SiVuedotjs, SiTailwindcss, SiHtml5, SiReact, SiTypescript, SiGithub, SiLinkedin, SiDiscord, SiJavascript, SiLinux, SiCplusplus, SiPython, HiLink, HiSolidCode, HiSolidGlobeAlt, MdMonitorRound);
 
 let hue = 0;
 window.setInterval(() => {

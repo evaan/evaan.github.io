@@ -13,6 +13,7 @@ div.box {
     border-radius: 16px;
     width: 100%;
     margin-bottom: 8px;
+    overflow-x: hidden;
 }
 a {
     text-decoration: underline dashed;
