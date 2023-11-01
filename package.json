@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "^5.0.8",
-    "oh-vue-icons": "^1.0.0-rc3",
+    "@fontsource/overpass": "^5.0.15",
+    "boxicons": "^2.1.4",
     "vue": "^3.3.4"
   },
   "devDependencies": {

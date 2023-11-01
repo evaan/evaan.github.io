@@ -4,11 +4,18 @@ export default {
 	theme: {
 		extend: {
 			fontSize: {
-				"2.5xl": "1.75rem",
-				"3.5xl": "2rem",
-				"4.5xl": "2.5rem"
+				"1.75rem": "1.75rem",
+				"2rem": "2rem",
+				"2.5rem": "2.5rem"
+			},
+			width: {
+				"11/16": "68.75%"
 			}
 		},
+		fontFamily: {
+			sans: ["Overpass"]
+
+		}
 	},
 	plugins: [],
 }
