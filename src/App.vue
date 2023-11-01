@@ -48,6 +48,7 @@
             <div class="box">
                 <p class="text-2rem mb-1">
                     Eastern Edge 2024
+                    <br class="ic:hidden" />
                     <v-icon name="si-typescript" class="h-8 w-8 mb-1" />
                     <v-icon name="si-react" class="h-8 w-8 mb-1" />
                     <v-icon name="si-python" class="h-8 w-8 mb-1" />
@@ -66,6 +67,7 @@
             <div class="box">
                 <p class="text-2rem mb-1">
                     Eastern Edge Website
+                    <br class="ic:hidden" />
                     <v-icon name="si-react" class="h-8 w-8 mb-1" />
                     <v-icon name="si-astro" class="h-8 w-8 mb-1" />
                     <v-icon name="si-tailwindcss" class="h-8 w-8 mb-1" />
@@ -81,10 +83,10 @@
             <div class="box">
                 <p class="text-2rem mb-1">
                     Husky Explorer 2023
+                    <br class="ic:hidden" />
                     <v-icon name="si-javascript" class="h-8 w-8 mb-1" />
                     <v-icon name="si-cplusplus" class="h-8 w-8 mb-1" />
                     <v-icon name="si-python" class="h-8 w-8 mb-1" />
-                    <v-icon name="si-linux" class="h-8 w-8 mb-1" />
                 </p>
                 <p class="leading-relaxed">
                     The Husky Explorer competed in the 2023 Mate ROV World Championship that took place in Longmont, CO in June of 2023.
