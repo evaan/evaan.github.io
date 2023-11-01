@@ -3,7 +3,13 @@ import App from './App.vue'
 
 import "./styles/main.css"
 import "@fontsource/overpass/latin-400.css"
-import "boxicons/css/boxicons.min.css"
+
+import { OhVueIcon, addIcons } from "oh-vue-icons";
+import { HiLink, HiSolidCode, HiSolidGlobeAlt, MdMonitorRound, SiAstro, SiCplusplus, SiDiscord, SiGithub, SiHtml5, SiJavascript, SiLinkedin, SiLinux, SiPython, SiReact, SiTailwindcss, SiTypescript } from "oh-vue-icons/icons";
+
+addIcons(HiSolidCode, HiSolidGlobeAlt, MdMonitorRound); //add skills icons
+addIcons(SiGithub, SiLinkedin, SiDiscord, HiLink); //contacts, github, and link
+addIcons(SiTypescript, SiReact, SiPython, SiTailwindcss, SiAstro, SiJavascript, SiCplusplus, SiLinux, SiHtml5); //project languages
 
 let hue = 0;
 window.setInterval(() => {
@@ -12,4 +18,5 @@ window.setInterval(() => {
 }, 20);
 
 const app = createApp(App);
+app.component("v-icon", OhVueIcon);
 app.mount('#app')

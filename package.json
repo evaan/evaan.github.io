@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@fontsource/overpass": "^5.0.15",
-    "boxicons": "^2.1.4",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.3.4"
   },
   "devDependencies": {
