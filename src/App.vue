@@ -82,10 +82,11 @@
                     Eastern Edge Website
                     <br class="ic:hidden" />
                     <v-icon name="si-astro" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-react" class="h-8 w-8 mb-1" />
                     <v-icon name="si-tailwindcss" class="h-8 w-8 mb-1" />
                 </p>
                 <p class="leading-relaxed">
-                    Assisting in rewriting the Eastern Edge website using Astro, and Tailwind CSS.
+                    Assisting in rewriting the Eastern Edge website using Astro, React, and Tailwind CSS.
                 </p>
                 <p class="text-xl xl:text-1.75rem mb-1">
                     <v-icon name="hi-link" class="xl:h-7 xl:w-7 h-5 w-5 mb-0.5" />

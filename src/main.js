@@ -9,7 +9,7 @@ import { HiLink, HiSolidCode, HiSolidGlobeAlt, MdMonitorRound, SiAstro, SiCplusp
 
 addIcons(HiSolidCode, HiSolidGlobeAlt, MdMonitorRound); //add skills icons
 addIcons(SiGithub, SiLinkedin, SiDiscord, HiLink); //contacts, github, and link
-addIcons(SiTypescript, SiReact, SiPython, SiTailwindcss, SiAstro, SiJavascript, SiCplusplus, SiLinux, SiHtml5); //project languages
+addIcons(SiTypescript, SiReact, SiPython, SiTailwindcss, SiAstro, SiJavascript, SiCplusplus, SiLinux, SiHtml5, SiDebian, SiDocker, SiHomeassistant, SiProxmox, SiTruenas); //project languages
 
 let hue = 0;
 window.setInterval(() => {
