@@ -47,6 +47,19 @@
             <p class="text-xl mb-2">A full list of projects can be found <a href="https://github.com/evaan?tab=repositories" target="_blank">here</a>.</p>
             <div class="box">
                 <p class="text-2rem mb-1">
+                    Homelab
+                    <v-icon name="si-proxmox" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-truenas" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-docker" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-homeassistant" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-debian" class="h-8 w-8 mb-1" />
+                </p>
+                <p class="leading-relaxed">
+                    A homelab which uses Proxmox that I run as a hobby. The VMs in Proxmox include TrueNAS Core, Debian with Docker containers, and Home Assistant OS.
+                </p>
+            </div>
+            <div class="box">
+                <p class="text-2rem mb-1">
                     Eastern Edge 2024
                     <v-icon name="si-typescript" class="h-8 w-8 mb-1" />
                     <v-icon name="si-react" class="h-8 w-8 mb-1" />
