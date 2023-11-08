@@ -23,6 +23,8 @@
     }
     a {
         @apply text-pink-300;
+        @apply transition;
+        @apply duration-200;
     }
     a:hover {
         @apply text-pink-400;

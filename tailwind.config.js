@@ -10,6 +10,9 @@ export default {
 			},
 			width: {
 				"11/16": "68.75%"
+			},
+			screens: {
+				"ic": "1100px"
 			}
 		},
 		fontFamily: {
