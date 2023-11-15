@@ -48,6 +48,7 @@
             <div class="box">
                 <p class="text-2rem mb-1">
                     Homelab
+                    <br class="ic:hidden" />
                     <v-icon name="si-proxmox" class="h-8 w-8 mb-1" />
                     <v-icon name="si-truenas" class="h-8 w-8 mb-1" />
                     <v-icon name="si-docker" class="h-8 w-8 mb-1" />
