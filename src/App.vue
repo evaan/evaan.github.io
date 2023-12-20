@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto w-11/12 lg:w-5/6">
         <div>
-            <p class="text-2.5rem leading-tight" id="header">Evan</p>
+            <p class="text-2.5rem leading-tight" id="header">Evan Whelan</p>
             <p class="text-xl mb-2">Student at Memorial University</p>
             <div class="box">
                 <p class="text-2rem mb-1">About Me</p>
@@ -15,7 +15,7 @@
             <p class="text-2rem mb-1">Skills</p>
                 <p class="text-xl mb-1">
                     <v-icon name="hi-solid-code" class="h-6 w-6" />
-                    Java, TypeScript, Python
+                    Java, TypeScript, Python, SQL
                 </p>
                 <p class="text-xl mb-1">
                     <v-icon name="hi-solid-globe-alt" class="h-6 w-6" />
@@ -45,6 +45,28 @@
         <div>
             <p class="text-2.5rem leading-tight">Projects</p>
             <p class="text-xl mb-2">A full list of projects can be found <a href="https://github.com/evaan?tab=repositories" target="_blank">here</a>.</p>
+            <div class="box">
+                <p class="text-2rem mb-1">
+                    Claret
+                    <br class="ic:hidden" />
+                    <v-icon name="si-react" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-postgresql" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-python" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-javascript" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-docker" class="h-8 w-8 mb-1" />
+                </p>
+                <p class="leading-relaxed">
+                    A schedule builder for Memorial University students which makes it significantly easier to choose your courses for future semesters.
+                </p>
+                <p class="text-xl xl:text-1.75rem mb-1">
+                    <v-icon name="hi-link" class="xl:h-7 xl:w-7 h-5 w-5 mb-0.5" />
+                    <a href="https://claret.evaan.dev" target="_blank" class="ml-2">claret.evaan.dev</a>
+                </p>
+                <p class="text-xl xl:text-1.75rem mb-1">
+                    <v-icon name="si-github" class="xl:h-8 xl:w-8 h-6 w-6 mb-0.5" />
+                    <a href="https://github.com/evaan/Claret" target="_blank" class="ml-2">evaan/Claret</a>
+                </p>
+            </div>
             <div class="box">
                 <p class="text-2rem mb-1">
                     Homelab
