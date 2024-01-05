@@ -5,11 +5,11 @@ import "./styles/main.css"
 import "@fontsource/overpass/latin-400.css"
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { HiLink, HiSolidCode, HiSolidGlobeAlt, MdMonitorRound, SiAstro, SiCplusplus, SiDebian, SiDiscord, SiDocker, SiGithub, SiHomeassistant, SiHtml5, SiJavascript, SiLinkedin, SiLinux, SiPostgresql, SiProxmox, SiPython, SiReact, SiTailwindcss, SiTruenas, SiTypescript } from "oh-vue-icons/icons";
+import { HiLink, HiSolidCode, HiSolidGlobeAlt, MdMonitorRound, SiAstro, SiCplusplus, SiDebian, SiDiscord, SiDocker, SiGithub, SiGo, SiHomeassistant, SiHtml5, SiJavascript, SiLinkedin, SiLinux, SiPostgresql, SiProxmox, SiPython, SiReact, SiTailwindcss, SiTruenas, SiTypescript } from "oh-vue-icons/icons";
 
 addIcons(HiSolidCode, HiSolidGlobeAlt, MdMonitorRound); //add skills icons
 addIcons(SiGithub, SiLinkedin, SiDiscord, HiLink); //contacts, github, and link
-addIcons(SiTypescript, SiReact, SiPython, SiTailwindcss, SiAstro, SiJavascript, SiCplusplus, SiLinux, SiHtml5, SiDebian, SiDocker, SiHomeassistant, SiProxmox, SiTruenas, SiPostgresql); //project languages
+addIcons(SiTypescript, SiReact, SiPython, SiTailwindcss, SiAstro, SiJavascript, SiCplusplus, SiLinux, SiHtml5, SiDebian, SiDocker, SiHomeassistant, SiProxmox, SiTruenas, SiPostgresql, SiGo); //project languages
 
 let hue = 0;
 window.setInterval(() => {

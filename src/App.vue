@@ -8,7 +8,7 @@
                 <p class="leading-relaxed">
                     Hi, I'm Evan. I am a first year student at Memorial University of Newfoundland, studying computer science.
                     I am also a member on the software team of <a href="https://easternedgerobotics.com" target="_blank">Eastern Edge Robotics</a>.
-                    Currently, I am learning C++ and React!
+                    Currently, I am learning Go, Rust!
                 </p>
             </div>
             <div class="box">
@@ -49,22 +49,45 @@
                 <p class="text-2rem mb-1">
                     Claret
                     <br class="ic:hidden" />
+                    <v-icon name="si-go" class="h-8 w-8 mb-1" />
                     <v-icon name="si-react" class="h-8 w-8 mb-1" />
                     <v-icon name="si-postgresql" class="h-8 w-8 mb-1" />
-                    <v-icon name="si-python" class="h-8 w-8 mb-1" />
-                    <v-icon name="si-javascript" class="h-8 w-8 mb-1" />
                     <v-icon name="si-docker" class="h-8 w-8 mb-1" />
                 </p>
                 <p class="leading-relaxed">
-                    A schedule builder for Memorial University students which makes it significantly easier to choose your courses for future semesters.
+                    An API, Scraper, and Schedule Builder created for Memorial Univeristy students allowing for significantly easier course selection.
                 </p>
                 <p class="text-xl xl:text-1.75rem mb-1">
                     <v-icon name="hi-link" class="xl:h-7 xl:w-7 h-5 w-5 mb-0.5" />
-                    <a href="https://claret.evaan.dev" target="_blank" class="ml-2">claret.evaan.dev</a>
+                    <a href="https://claretformun.com" target="_blank" class="ml-2">ClaretForMUN.com</a>
                 </p>
                 <p class="text-xl xl:text-1.75rem mb-1">
                     <v-icon name="si-github" class="xl:h-8 xl:w-8 h-6 w-6 mb-0.5" />
                     <a href="https://github.com/evaan/Claret" target="_blank" class="ml-2">evaan/Claret</a>
+                </p>
+            </div>
+            <div class="box">
+                <p class="text-2rem mb-1">
+                    Eastern Edge
+                    <br class="ic:hidden" />
+                    <v-icon name="si-typescript" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-react" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-python" class="h-8 w-8 mb-1" />
+                    <v-icon name="si-astro" class="h-8 w-8 mb-1" />
+                </p>
+                <p class="leading-relaxed">
+                    Currently, I am a software team member and GUI lead for Eastern Edge.
+                    The software will be used for the ROV competing in the 2024 
+                    <a href="https://materovcompetition.org" target="_blank">MATE ROV Competition</a> 
+                    in Kingsport, TN next June! Alongside the ROV, I am also assisting in recreating the Eastern Edge website.
+                </p>
+                <p class="text-xl xl:text-1.75rem mb-1">
+                    <v-icon name="hi-link" class="xl:h-7 xl:w-7 h-5 w-5 mb-0.5" />
+                    <a href="https://easternedgerobotics.com" target="_blank" class="ml-2">EasternEdgeRobotics.com</a>
+                </p>
+                <p class="text-xl xl:text-1.75rem mb-1">
+                    <v-icon name="si-github" class="xl:h-8 xl:w-8 h-6 w-6 mb-0.5" />
+                    <a href="https://github.com/easternedgerobotics" target="_blank" class="ml-2">EasternEdgeRobotics</a>
                 </p>
             </div>
             <div class="box">
@@ -79,41 +102,6 @@
                 </p>
                 <p class="leading-relaxed">
                     A homelab which uses Proxmox that I run as a hobby. The VMs in Proxmox include TrueNAS Core, Debian with Docker containers, and Home Assistant OS.
-                </p>
-            </div>
-            <div class="box">
-                <p class="text-2rem mb-1">
-                    Eastern Edge 2024
-                    <br class="ic:hidden" />
-                    <v-icon name="si-typescript" class="h-8 w-8 mb-1" />
-                    <v-icon name="si-react" class="h-8 w-8 mb-1" />
-                    <v-icon name="si-python" class="h-8 w-8 mb-1" />
-                </p>
-                <p class="leading-relaxed">
-                    Currently, I am a software team member and GUI lead for Eastern Edge.
-                    The software will be used for the ROV competing in the 2024 
-                    <a href="https://materovcompetition.org" target="_blank">MATE ROV Competition</a> 
-                    in Kingsport, TN next June!
-                </p>
-                <p class="text-xl xl:text-1.75rem mb-1">
-                    <v-icon name="si-github" class="xl:h-8 xl:w-8 h-6 w-6 mb-0.5" />
-                    <a href="https://github.com/easternedgerobotics" target="_blank" class="ml-2">EasternEdgeRobotics</a>
-                </p>
-            </div>
-            <div class="box">
-                <p class="text-2rem mb-1">
-                    Eastern Edge Website
-                    <br class="ic:hidden" />
-                    <v-icon name="si-astro" class="h-8 w-8 mb-1" />
-                    <v-icon name="si-react" class="h-8 w-8 mb-1" />
-                    <v-icon name="si-tailwindcss" class="h-8 w-8 mb-1" />
-                </p>
-                <p class="leading-relaxed">
-                    Assisting in rewriting the Eastern Edge website using Astro, React, and Tailwind CSS.
-                </p>
-                <p class="text-xl xl:text-1.75rem mb-1">
-                    <v-icon name="hi-link" class="xl:h-7 xl:w-7 h-5 w-5 mb-0.5" />
-                    <a href="https://easternedgerobotics.com" target="_blank" class="ml-2">EasternEdgeRobotics.com</a>
                 </p>
             </div>
             <div class="box">
