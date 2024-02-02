@@ -1,0 +1,52 @@
+---
+import '@fontsource-variable/inter'
+
+interface Props {
+    title: string;
+}
+const { title } = Astro.props 
+---
+
+<html lang="en">
+    <head>
+        <title>{title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            @tailwind base;
+            @tailwind components;
+            @tailwind utilities;
+
+            @layer base {
+                body {
+                    @apply bg-neutral-800;
+                }
+                * {
+                    @apply text-neutral-200;
+                    font-family: "Inter", monospace;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex justify-center">
+            <div class="grid grid-cols-3 md:w-4/5 gap-3 h-screen w-screen">
+                <div class="flex items-center justify-center h-full">
+                    <div>
+                        <div class="group hover:bg-neutral-200 px-2 mb-8">
+                            <a href="/" class="h-full w-full">
+                                <p class="text-6xl text-center group-hover:text-neutral-800 font-bold">evan whelan</p>
+                            </a>
+                        </div>
+                        <a href="/about"><p class="hover:bg-neutral-200 hover:text-neutral-800 text-center text-3xl px-2 my-4 w-full">about me</p></a>
+                        <a href="/projects"><p class="hover:bg-neutral-200 hover:text-neutral-800 text-center text-3xl px-2 my-4 w-ful">projects</p></a>
+                        <a href="/blog"><p class="hover:bg-neutral-200 hover:text-neutral-800 text-center text-3xl px-2 my-4 w-full">blog</p></a>
+        
+                    </div>
+                </div>
+                <div class="w-full col-span-2">
+                    <slot />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
