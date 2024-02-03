@@ -39,14 +39,14 @@ await fetch("https://api.lanyard.rest/v1/users/790703402388684830").then(respons
 
 <Layout title="Evan Whelan">
     <div>
-        <p class="text-3xl mb-1">hi, i'm evan.</p>
+        <p class="text-3xl mb-1 font-semibold">hi, i'm evan.</p>
         <p class="text-lg indent-4">I'm a first year student at <a href="https://mun.ca" target="_blank">Memorial University of Newfoundland</a> studying Computer Engineering.
             While studying at MUN, I am also a Software Member and GUI Lead on <a href="https://easternedgerobotics.com" target="_blank">Eastern Edge Robotics</a>, which competes in the <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a> each year.
             This year, Eastern Edge is heading to Kingsport, Tennessee!</p>
         <p class="text-lg indent-4">The project I am working on right now is <a href="https://claretformun.com" target="_blank">Claret</a>, a collection of tools which are created for MUN students.
             As of right now, Claret is mainly focussed around course selection, with a schedule builder written in React, as well as a scraper and API written in Go.</p>
         <p class="text-lg mb-4 indent-4">You can find more about my projects <a href="/projects">here</a>.</p>
-        <p class="text-3xl mb-1">skills i've used in projects</p>
+        <p class="text-3xl mb-1 font-semibold">skills i've used in projects</p>
         <div class="mb-4">
             <div class="flex items-center mb-2">
                 <i data-lucide="code-2" />
@@ -61,7 +61,7 @@ await fetch("https://api.lanyard.rest/v1/users/790703402388684830").then(respons
                 <p class="text-xl ml-2">Linux, Docker, ROS</p>
             </div>
         </div>
-        <p class=`text-3xl mb-1 ${hidden ? "hidden" : ""}`>current activity</p>
+        <p class=`text-3xl mb-1 ${hidden ? "hidden" : ""} font-semibold`>current activity</p>
         <div class=`flex items-center mb-4 ${hidden ? "hidden" : ""}`>
             <img src={image} alt="Activity Icon" class="mr-2 h-[96px] rounded-lg" onerror="this.style.display = 'none'" />
             <div class="items-center">
@@ -72,16 +72,16 @@ await fetch("https://api.lanyard.rest/v1/users/790703402388684830").then(respons
                 <p class="text-lg">{details}<br class={state == "" ? "hidden" : ""}/>{state}</p>
             </div>
         </div>
-        <p class="text-3xl mb-1">contact me</p>
+        <p class="text-3xl mb-1 font-semibold">contact me</p>
         <div class="flex mb-2">
             <a class="group flex items-center p-1" href="https://github.com/evaan" target="_blank">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 transition duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="mr-0.5"><path d={siGithub.path}/></svg> 
                 <p class="text-2xl leading-none">/evaan</p>
             </a>
         </div>
         <div class="flex mb-2">
             <a class="group flex items-center p-1" href="https://linkedin.com/in/evan-whelan-/" target="_blank">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 transition duration-200 group-hover:fill-neutral-800"><path d={siLinkedin.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="duration-750 group-hover:fill-black fill-blue-300 transition mr-0.5"><path d={siLinkedin.path}/></svg> 
                 <p class="text-2xl leading-none">/evan-whelan-</p>
             </a>
         </div>
