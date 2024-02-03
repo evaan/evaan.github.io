@@ -1,5 +1,5 @@
 ---
-import '@fontsource-variable/inter'
+import '@fontsource/inter'
 
 interface Props {
     title: string;
@@ -28,7 +28,8 @@ const { title } = Astro.props
                     @apply duration-200;
                 }
                 a:hover {
-                    @apply text-blue-100;
+                    @apply bg-blue-300;
+                    @apply text-neutral-800;
                 }
             }
         </style>
@@ -39,30 +40,30 @@ const { title } = Astro.props
                 <!-- desktop navbar -->
                 <div class="hidden md:flex items-center justify-center h-full">
                     <div>
-                        <a class="group flex items-center transition duration-200 hover:bg-neutral-200 p-1" href="/">
-                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 font-bold transition duration-200">evan whelan</p>
+                        <a class="group flex items-center hover:bg-neutral-200 p-1" href="/">
+                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 font-bold">evan whelan</p>
                         </a>
-                        <a class="group flex items-center transition duration-200 hover:bg-neutral-200 p-1" href="/projects">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200">projects</p>
+                        <a class="group flex items-center hover:bg-neutral-200 p-1" href="/projects">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">projects</p>
                         </a>
-                        <a class="group flex items-center transition duration-200 hover:bg-neutral-200 p-1" href="/blog">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200">blog</p>
+                        <a class="group flex items-center hover:bg-neutral-200 p-1" href="/blog">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
                         </a>
                     </div>
                 </div>
                 <!-- mobile navbar -->
                 <div class="md:hidden flex justify-evenly my-2">
-                    <a class="group flex items-center transition duration-200 hover:bg-neutral-200 mr-2" href="/">
-                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 font-bold transition duration-200">evan whelan</p>
+                    <a class="group flex items-center hover:bg-neutral-200 mr-2" href="/">
+                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 font-bold transition duration-200 ">evan whelan</p>
                     </a>
                     <a class="group flex items-center transition duration-200 hover:bg-neutral-200 mr-2" href="/projects">
-                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200">projects</p>
+                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">projects</p>
                     </a>
-                    <a class="group flex items-center transition duration-200 hover:bg-neutral-200" href="/blog">
-                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200">blog</p>
+                    <a class="group flex items-center hover:bg-neutral-200" href="/blog">
+                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
                     </a>        
                 </div>
-                <div class="w-full sm:col-span-3 md:col-span-2">
+                <div class="w-full sm:col-span-3 md:col-span-2 flex items-center h-full">
                     <slot />
                 </div>
             </div>
