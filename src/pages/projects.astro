@@ -1,124 +1,125 @@
 ---
+import { fab } from "@fortawesome/free-brands-svg-icons";
 import Layout from "../layouts/Layout.astro";
-import { siAstro, siCplusplus, siDebian, siDocker, siGithub, siGo, siHomeassistant, siHtml5, siJavascript, siLinux, siMinecraft, siOpenjdk, siPostgresql, siProxmox, siPython, siReact, siRos, siTruenas } from "simple-icons";
+import { siAstro, siCplusplus, siDebian, siDocker, siGithub, siGo, siHomeassistant, siHtml5, siJavascript, siLinux, siPostgresql, siProxmox, siPython, siReact, siRos, siTruenas } from "simple-icons";
+import Accordion from "../components/Accordion.astro";
 ---
 
 <Layout title="Evan Whelan - Projects">
     <div>
-        <div class="mb-4">
-            <div class="flex items-center">
+        <Accordion shown={true} index={0}>
+            <Fragment slot="header">
                 <p class="text-4xl font-bold mr-2">Claret</p>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#00ADD8] mr-1"><path d={siGo.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#61DAFB] mr-1"><path d={siReact.path}/></svg> 
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#2496ED] mr-1"><path d={siDocker.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#4169E1]"><path d={siPostgresql.path}/></svg>
-            </div>
-            <p class="text-xl">
-                Claret is a collection of tools created to assist Memorial University students. The primary focus of Claret is an easy to use schedule builder (written in React) allowing for
-                significantly easier planning semesters prior to course registration. Claret also consists of a Scraper, API, ICS Server, and Discord Bot all written in Go.
-            </p>
-            <div class="flex items-center">
-                <a class="group flex items-center p-1 mr-2" href="https://claretformun.com" target="_blank">
-                    <i data-lucide="link" class="stroke-blue-300 transition duration-200 group-hover:stroke-neutral-800"/>
-                    <p class="text-2xl leading-none">/ClaretForMUN.com</p>
-                </a>
-                <a class="group flex items-center p-1" href="https://github.com/evaan" target="_blank">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 transition mr-0.5 duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                    <p class="text-2xl leading-none">/evaan/Claret</p>
-                </a>
-            </div>
-        </div>
-        <div class="mb-4">
-            <div class="flex items-center">
+            </Fragment>
+            <Fragment slot="data">
+                <p class="text-xl">
+                    Claret is a collection of tools created to assist Memorial University students. The primary focus of Claret is an easy to use schedule builder (written in React) allowing for
+                    significantly easier planning semesters prior to course registration. Claret also consists of a Scraper, API, ICS Server, and Discord Bot all written in Go.
+                </p>
                 <div class="flex items-center">
-                    <p class="text-4xl font-bold mr-2">Eastern Edge Robotics</p>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#61DAFB] mr-1"><path d={siReact.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#3776AB] mr-1"><path d={siPython.path}/></svg> 
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#22314E] mr-1"><path d={siRos.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#00599C] mr-1"><path d={siCplusplus.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#BC52EE]"><path d={siAstro.path}/></svg>
+                    <a class="group flex items-center p-1 mr-2" href="https://claretformun.com" target="_blank">
+                        <i data-lucide="link" class="stroke-blue-300 transition duration-200 group-hover:stroke-neutral-800"/>
+                        <p class="text-2xl leading-none">/ClaretForMUN.com</p>
+                    </a>
+                    <a class="group flex items-center p-1" href="https://github.com/evaan" target="_blank">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 transition mr-0.5 duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
+                        <p class="text-2xl leading-none">/evaan/Claret</p>
+                    </a>
                 </div>
-            </div>
-            <p class="text-xl">
-                I am currently a software team member as well as GUI lead for Eastern Edge Robotics. The software will be used for the ROV competing in the 2024 <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a> in Kingsport, Tennessee next June!
-                Alongside being a software member, I am also assisting in rewriting the website using Astro and React!
-            </p>
-            <div class="flex items-center">
-                <a class="group flex items-center p-1 mr-2" href="https://easternedgerobotics.com" target="_blank">
-                    <i data-lucide="link" class="stroke-blue-300 transition duration-200 group-hover:stroke-neutral-800"/>
-                    <p class="text-2xl leading-none">/EasternEdgeRobotics.com</p>
-                </a>
-                <a class="group flex items-center p-1" href="https://github.com/easternedgerobotics" target="_blank">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 transition mr-0.5 duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                    <p class="text-2xl leading-none">/EasternEdgeRobotics</p>
-                </a>
-            </div>
-        </div>
-        <div class="mb-4">
-            <div class="flex items-center">
+            </Fragment>
+        </Accordion>
+        <Accordion shown={true} index={1}>
+            <Fragment slot="header">
+                <p class="text-4xl font-bold mr-2">Eastern Edge Robotics</p>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#61DAFB] mr-1"><path d={siReact.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#3776AB] mr-1"><path d={siPython.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#405D93] mr-1"><path d={siRos.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#00599C] mr-1"><path d={siCplusplus.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#BC52EE]"><path d={siAstro.path}/></svg>
+            </Fragment>
+            <Fragment slot="data">
+                <p class="text-xl">
+                    I am currently a software team member as well as GUI lead for Eastern Edge Robotics. The software will be used for the ROV competing in the 2024 <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a> in Kingsport, Tennessee next June!
+                    Alongside being a software member, I am also assisting in rewriting the website using Astro and React!
+                </p>
                 <div class="flex items-center">
-                    <p class="text-4xl font-bold mr-2">Homelab</p>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#E57000] mr-1"><path d={siProxmox.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#A81D33]"><path d={siDebian.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#0095D5] mr-1"><path d={siTruenas.path}/></svg> 
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#2496ED] mr-1"><path d={siDocker.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#18BCF2] mr-1"><path d={siHomeassistant.path}/></svg>
-                </div>
-            </div>
-            <p class="text-xl">
-                A homelab which uses Proxmox that I run as a hobby. The VMs in Proxmox include TrueNAS Core, Debian with Docker containers, and Home Assistant OS. 
-            </p>
-        </div>
-        <div class="mb-4">
-            <div class="flex items-center">
+                    <a class="group flex items-center p-1 mr-2" href="https://easternedgerobotics.com" target="_blank">
+                        <i data-lucide="link" class="stroke-blue-300 transition duration-200 group-hover:stroke-neutral-800"/>
+                        <p class="text-2xl leading-none">/EasternEdgeRobotics.com</p>
+                    </a>
+                    <a class="group flex items-center p-1" href="https://github.com/easternedgerobotics" target="_blank">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 transition mr-0.5 duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
+                        <p class="text-2xl leading-none">/EasternEdgeRobotics</p>
+                    </a>
+                </div> 
+            </Fragment>
+        </Accordion>
+        <Accordion shown={true} index={2}>
+            <Fragment slot="header">
+                <p class="text-4xl font-bold mr-2">Homelab</p>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#E57000] mr-1"><path d={siProxmox.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#A81D33]"><path d={siDebian.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#0095D5] mr-1"><path d={siTruenas.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#2496ED] mr-1"><path d={siDocker.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#18BCF2] mr-1"><path d={siHomeassistant.path}/></svg>
+            </Fragment>
+            <Fragment slot="data">
+                <p class="text-xl">
+                    A homelab which uses Proxmox that I run as a hobby. The VMs in Proxmox include TrueNAS Core, Debian with Docker containers, and Home Assistant OS. 
+                </p> 
+            </Fragment>
+        </Accordion>
+        <Accordion shown={false} index={3}>
+            <Fragment slot="header">
+                <p class="text-4xl font-bold mr-2">Husky Explorer 2023</p>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#F7DF1E] mr-1"><path d={siJavascript.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#00599C] mr-1"><path d={siCplusplus.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#3776AB] mr-1"><path d={siPython.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#FCC624] mr-1"><path d={siLinux.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#E34F26]"><path d={siHtml5.path}/></svg>
+            </Fragment>
+            <Fragment slot="data">
+                <p class="text-xl">
+                    The Husky Explorer competed in the 2023 Mate ROV World Championship that took place in Longmont, Colorado in June of 2023.
+                    The repository contains all of the code used by Husky Explorer that year, including the software control system, and the vertical profiling float.             </p>
                 <div class="flex items-center">
-                    <p class="text-4xl font-bold mr-2">Husky Explorer 2023</p>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#F7DF1E] mr-1"><path d={siJavascript.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#00599C] mr-1"><path d={siCplusplus.path}/></svg> 
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#3776AB] mr-1"><path d={siPython.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#FCC624] mr-1"><path d={siLinux.path}/></svg>
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#E34F26]"><path d={siHtml5.path}/></svg>
-                </div>
-            </div>
-            <p class="text-xl">
-                The Husky Explorer competed in the 2023 Mate ROV World Championship that took place in Longmont, Colorado in June of 2023.
-                The repository contains all of the code used by Husky Explorer that year, including the software control system, and the vertical profiling float.             </p>
-            <div class="flex items-center">
-                <a class="group flex items-center p-1" href="https://github.com/evaan/huskyexplorer2023" target="_blank">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 transition mr-0.5 duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                    <p class="text-2xl leading-none">/evaan/HuskyExplorer2023</p>
-                </a>
-            </div>
-        </div>
-        <div class="mb-4">
-            <div class="flex items-center">
+                    <a class="group flex items-center p-1" href="https://github.com/evaan/huskyexplorer2023" target="_blank">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 transition mr-0.5 duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
+                        <p class="text-2xl leading-none">/evaan/HuskyExplorer2023</p>
+                    </a>
+                </div> 
+            </Fragment>
+        </Accordion>
+        <Accordion shown={false} index={4}>
+            <Fragment slot="header">
+                <p class="text-4xl font-bold mr-2 select-none">FrostBurn</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="32px" width="32px" role="img" class="fill-[#f89820] mr-1">
+                    <path d={fab.faJava.icon[4].toString()}/>
+                </svg>
+            </Fragment>
+            <Fragment slot="data">
+                <p class="text-xl">
+                    A Minecraft utility mod created using the Fabric Modding API for 1.17.1, this mod included several features such as a custom ClickGUI using the <a href="https://github.com/ocornut/imgui" target="_blank">ImGui</a> library.
+                </p>
                 <div class="flex items-center">
-                    <p class="text-4xl font-bold mr-2">FrostBurn</p>
-                    <svg height="10px" viewBox="0 10 24 18" width="64px" class="fill-[#70B237] mr-1" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg"><path d={siMinecraft.path} /></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="32px" width="32px" role="img" class="fill-[#f89820] mr-1">
-                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path d="M277.7 312.9c9.8-6.7 23.4-12.5 23.4-12.5s-38.7 7-77.2 10.2c-47.1 3.9-97.7 4.7-123.1 1.3-60.1-8 33-30.1 33-30.1s-36.1-2.4-80.6 19c-52.5 25.4 130 37 224.5 12.1zm-85.4-32.1c-19-42.7-83.1-80.2 0-145.8C296 53.2 242.8 0 242.8 0c21.5 84.5-75.6 110.1-110.7 162.6-23.9 35.9 11.7 74.4 60.2 118.2zm114.6-176.2c.1 0-175.2 43.8-91.5 140.2 24.7 28.4-6.5 54-6.5 54s62.7-32.4 33.9-72.9c-26.9-37.8-47.5-56.6 64.1-121.3zm-6.1 270.5a12.2 12.2 0 0 1 -2 2.6c128.3-33.7 81.1-118.9 19.8-97.3a17.3 17.3 0 0 0 -8.2 6.3 70.5 70.5 0 0 1 11-3c31-6.5 75.5 41.5-20.6 91.4zM348 437.4s14.5 11.9-15.9 21.2c-57.9 17.5-240.8 22.8-291.6 .7-18.3-7.9 16-19 26.8-21.3 11.2-2.4 17.7-2 17.7-2-20.3-14.3-131.3 28.1-56.4 40.2C232.8 509.4 401 461.3 348 437.4zM124.4 396c-78.7 22 47.9 67.4 148.1 24.5a185.9 185.9 0 0 1 -28.2-13.8c-44.7 8.5-65.4 9.1-106 4.5-33.5-3.8-13.9-15.2-13.9-15.2zm179.8 97.2c-78.7 14.8-175.8 13.1-233.3 3.6 0-.1 11.8 9.7 72.4 13.6 92.2 5.9 233.8-3.3 237.1-46.9 0 0-6.4 16.5-76.2 29.7zM260.6 353c-59.2 11.4-93.5 11.1-136.8 6.6-33.5-3.5-11.6-19.7-11.6-19.7-86.8 28.8 48.2 61.4 169.5 25.9a60.4 60.4 0 0 1 -21.1-12.8z"/>
-                    </svg>
-                    <svg height="32px" width="32px" viewBox="0 0 512 476" xmlns="http://www.w3.org/2000/svg" class="fill-[#E0C9A6]"><path d="m72 292.4395142h-36v-36h36zm36.9295654-72.9296265h-36.9295654v36.9296265h36.9295654zm36.9296265-36.9295654h-36.9296265v36.9295654h36.9296265zm36.9295654-36.9295655h-36.9295654v36.9295654h36.9295654zm36-36.2574691h-36v36.2574692h36zm37.1346436-72.8280411h-37.1346436v72.8280411h37.1346436zm37.2692871-36.5652466h-37.2692871v36h37.2692871zm0 72h36.0442505v-35.2857056h-36.0442505zm36.0442505 37.3932877h36.4812622v-36.9443741h-36.4812622zm36.4812622 36.6146164h37.1425171v-36.6146164h-37.1425171zm37.1425171 35.6428527h36.29953v-35.6428528h-36.29953zm73.5429077.4488526h-37.2433777v73.7908936h37.2433777zm-220.4802246-72.7063217v36.7222519h36.6399536v-36.7222519zm36.6399536 36.7222519v36.9295654h36.673584v-36.9295654zm73.1548462 72.9295654v-36h-36.4812622v36zm-72.7874146 146.6635742h36.3061523v-36h-36.3061523zm-109.7509765 110.1085815h-36.9428711v35.8370972h73.9933472v-35.8370972h35.8534241v-36.7028809-36.7028808h36.8470764v-36.7028198h-36.8470764v36.7028198h-36.8109436l-.1081543 36.7028809h-35.8173829v36.7028809m-73.670105-.0000001h36.5598145v-36.7028809h-36.5598145zm-36.467041-73.4057617v36.7028809h36.467041v-36.7028809zm-37.210083-36.7028198v36.7028198h37.210083v-36.7028198zm0-73.269165h-36v73.269104h36zm366.8607178-73.020813h-37.1425171v73.494873h-36.4812622v36h36.4812622v-35.8684692h73.4420471v-37h-36.29953z"/></svg>
-                </div>
-            </div>
-            <p class="text-xl">
-                A Minecraft utility mod created using the Fabric Modding API for 1.17.1, this mod included several features such as a custom ClickGUI using the <a href="https://github.com/ocornut/imgui" target="_blank">ImGui</a> library.
-            </p>
-            <div class="flex items-center">
-                <a class="group flex items-center p-1" href="https://github.com/evaan/frostburn" target="_blank">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 transition mr-0.5 duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                    <p class="text-2xl leading-none">/evaan/FrostBurn</p>
-                </a>
-            </div>
-        </div>
+                    <a class="group flex items-center p-1" href="https://github.com/evaan/frostburn" target="_blank">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 transition mr-0.5 duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
+                        <p class="text-2xl leading-none">/evaan/FrostBurn</p>
+                    </a>
+                </div> 
+            </Fragment>
+        </Accordion>
     </div>
     <script>
-        import { createIcons, Link } from 'lucide';
+        import { createIcons, Link } from "lucide";
         createIcons({
             icons: {
-                Link,
+                Link
             }
-        });
+        })
     </script>
 </Layout>

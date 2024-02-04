@@ -1,0 +1,41 @@
+---
+interface Props {
+    shown: boolean;
+    index: number;
+}
+const { shown, index } = Astro.props;
+---
+
+<div class="mb-2">
+    <div class="flex items-center cursor-pointer accordion" id=`accordion-${index}`>
+        <i data-lucide="chevron-right" id="chevron" class=`w-9 h-9 transition duration-300 ${shown ? "rotate-90" : ""}`/>
+        <slot name="header" class="flex"/>
+    </div>
+    <div class=`overflow-hidden transition-[max-height] duration-300 ${shown ? "max-h-fit" : "max-h-0"}`>
+        <slot name="data" />
+    </div> 
+</div>
+<script>
+    import { createIcons, ChevronRight } from "lucide";
+    createIcons({
+        icons: {
+            ChevronRight
+        }
+    });
+</script>
+<script define:vars={{ shown, index }}>
+    let open = shown;
+    const accordion = document.getElementById(`accordion-${index}`)
+    //fix animation on first close
+    if (open) accordion.nextElementSibling.style.maxHeight = accordion.nextElementSibling.scrollHeight + "px"
+    accordion.addEventListener("click", () => {
+        if (open) {
+            accordion.querySelector("svg").style.transform = "rotate(0deg)";
+            accordion.nextElementSibling.style.maxHeight = "0px"
+        } else {
+            accordion.querySelector("svg").style.transform = "rotate(90deg)";
+            accordion.nextElementSibling.style.maxHeight = accordion.nextElementSibling.scrollHeight + "px"
+        }
+        open = !open;
+    })
+</script>

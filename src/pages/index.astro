@@ -25,9 +25,9 @@ await fetch("https://api.lanyard.rest/v1/users/790703402388684830").then(respons
 
             } else {
                 name = `${element["name"]}`
-                details = `${element["details"]}`;
-                state = `${element["state"]}`;
-                image = `https://cdn.discordapp.com/app-assets/${element["application_id"]}/${element["assets"]["large_image"]}.png`;
+                if (element["details"] !== undefined) details = `${element["details"]}`;
+                if (element["state"] !== undefined) state = `${element["state"]}`;
+                if (element["assets"]["large_image"] !== undefined) image = `https://cdn.discordapp.com/app-assets/${element["application_id"]}/${element["assets"]["large_image"]}.png`;
             }
         });
         for (let index = 0; index < activities.length; index++) {
@@ -75,13 +75,13 @@ await fetch("https://api.lanyard.rest/v1/users/790703402388684830").then(respons
         <p class="text-3xl mb-1 font-semibold">contact me</p>
         <div class="flex mb-2">
             <a class="group flex items-center p-1" href="https://github.com/evaan" target="_blank">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="mr-0.5"><path d={siGithub.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="mr-0.5 fill-blue-300 transition duration-200 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
                 <p class="text-2xl leading-none">/evaan</p>
             </a>
         </div>
         <div class="flex mb-2">
             <a class="group flex items-center p-1" href="https://linkedin.com/in/evan-whelan-/" target="_blank">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="duration-750 group-hover:fill-black fill-blue-300 transition mr-0.5"><path d={siLinkedin.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="mr-0.5 fill-blue-300 transition duration-200 group-hover:fill-neutral-800"><path d={siLinkedin.path}/></svg> 
                 <p class="text-2xl leading-none">/evan-whelan-</p>
             </a>
         </div>

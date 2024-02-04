@@ -38,7 +38,7 @@ const { title } = Astro.props
         <div class="flex justify-center">
             <div class="sm:grid sm:grid-cols-3 w-4/5 gap-3 h-screen">
                 <!-- desktop navbar -->
-                <div class="hidden md:flex items-center justify-center h-full">
+                <div class="hidden md:flex items-center justify-center h-full fixed">
                     <div>
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/">
                             <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 font-bold">evan whelan</p>
@@ -49,7 +49,7 @@ const { title } = Astro.props
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/blog">
                             <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
                         </a>
-                    </div>
+            </div>
                 </div>
                 <!-- mobile navbar -->
                 <div class="md:hidden flex justify-evenly my-2">
@@ -61,9 +61,9 @@ const { title } = Astro.props
                     </a>
                     <a class="group flex items-center hover:bg-neutral-200" href="/blog">
                         <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
-                    </a>        
+                    </a>
                 </div>
-                <div class="w-full sm:col-span-3 md:col-span-2 flex items-center h-full">
+                <div class="w-full md:col-start-2 md:col-span-2 flex items-center md:h-full">
                     <slot />
                 </div>
             </div>
