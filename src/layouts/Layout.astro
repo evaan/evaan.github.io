@@ -33,16 +33,27 @@ const { title } = Astro.props
                     @apply text-neutral-800;
                 }
             }
+            @layer utilities {
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .no-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            }
         </style>
     </head>
     <body>
         <div class="flex justify-center">
-            <div class="sm:grid sm:grid-cols-3 w-4/5 gap-3 h-screen">
+            <div class="md:grid md:grid-cols-3 w-4/5 gap-3 h-screen">
                 <!-- desktop navbar -->
-                <div class="hidden md:flex items-center justify-center h-full fixed">
+                <div class="hidden md:flex items-center justify-center h-screen">
                     <div>
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/">
                             <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 font-bold">evan whelan</p>
+                            <div>
+                            </div>
                         </a>
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/projects">
                             <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">projects</p>
@@ -50,7 +61,7 @@ const { title } = Astro.props
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/posts">
                             <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
                         </a>
-            </div>
+                    </div>
                 </div>
                 <!-- mobile navbar -->
                 <div class="md:hidden flex justify-evenly my-2">

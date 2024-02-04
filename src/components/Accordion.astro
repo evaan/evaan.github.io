@@ -2,14 +2,22 @@
 interface Props {
     shown: boolean;
     index: number;
+    title: string
 }
-const { shown, index } = Astro.props;
+const { shown, index, title } = Astro.props;
 ---
 
 <div class="mb-2">
-    <div class="flex items-center cursor-pointer accordion" id=`accordion-${index}`>
-        <i data-lucide="chevron-right" id="chevron" class=`w-9 h-9 transition duration-300 ${shown ? "rotate-90" : ""}`/>
-        <slot name="header" class="flex"/>
+    <div class="flex flex-wrap items-center cursor-pointer accordion overflow-hidden" id=`accordion-${index}`>
+        <p class="flex items-center text-4xl font-bold mr-2">
+            <i data-lucide="chevron-right" id="chevron" class="w-9 h-9 min-w-9 min-h-9 transition duration-300"/>
+            <span>
+                {title}
+                <span class="inline-flex mobile-only:[&>*:nth-child(n+3)]:hidden">
+                    <slot name="icons" />
+                </span>
+            </span>
+        </p>
     </div>
     <div class=`overflow-hidden transition-[max-height] duration-300 ${shown ? "max-h-fit" : "max-h-0"}`>
         <slot name="data" />
@@ -26,8 +34,12 @@ const { shown, index } = Astro.props;
 <script define:vars={{ shown, index }}>
     let open = shown;
     const accordion = document.getElementById(`accordion-${index}`)
-    //fix animation on first close
-    if (open) accordion.nextElementSibling.style.maxHeight = accordion.nextElementSibling.scrollHeight + "px"
+    if (shown && window.innerWidth <= 640) open = false;
+    if (open) {
+        accordion.nextElementSibling.style.maxHeight = accordion.nextElementSibling.scrollHeight + "px"
+        accordion.querySelector("i").style.transform = "rotate(90deg)";
+    }
+    else accordion.nextElementSibling.style.maxHeight = "0px"
     accordion.addEventListener("click", () => {
         if (open) {
             accordion.querySelector("svg").style.transform = "rotate(0deg)";
@@ -37,5 +49,8 @@ const { shown, index } = Astro.props;
             accordion.nextElementSibling.style.maxHeight = accordion.nextElementSibling.scrollHeight + "px"
         }
         open = !open;
+    })
+    addEventListener("resize", () => {
+        if (open) accordion.nextElementSibling.style.maxHeight = accordion.nextElementSibling.scrollHeight + "px"
     })
 </script>
