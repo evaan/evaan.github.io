@@ -11,6 +11,7 @@ const { title } = Astro.props
     <head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="https://avatars.githubusercontent.com/u/41494790?v=4">
         <style is:global>
             @tailwind base;
             @tailwind components;
@@ -46,7 +47,7 @@ const { title } = Astro.props
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/projects">
                             <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">projects</p>
                         </a>
-                        <a class="group flex items-center hover:bg-neutral-200 p-1" href="/blog">
+                        <a class="group flex items-center hover:bg-neutral-200 p-1" href="/posts">
                             <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
                         </a>
             </div>
@@ -59,7 +60,7 @@ const { title } = Astro.props
                     <a class="group flex items-center transition duration-200 hover:bg-neutral-200 mr-2" href="/projects">
                         <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">projects</p>
                     </a>
-                    <a class="group flex items-center hover:bg-neutral-200" href="/blog">
+                    <a class="group flex items-center hover:bg-neutral-200" href="/posts">
                         <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
                     </a>
                 </div>
