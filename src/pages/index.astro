@@ -9,6 +9,12 @@ let details = "";
 let state = "";
 let image = "";
 
+function encodeSpecialCharacters(inputString: string) {
+    return inputString.replace(/[^\x00-\x7F]/g, function (character: string) {
+        return "&#" + character.charCodeAt(0) + ";";
+    });
+}
+
 await fetch("https://api.lanyard.rest/v1/users/790703402388684830").then(response => response.json()).then(data => {
     if (data["data"]["activities"].length > 0) {
         const activities = data["data"]["activities"].filter((status: { [x: string]: string | string[]; }) => status["id"] !== "custom" && !status["id"].includes("spotify")).concat(data["data"]["activities"].filter((status: { [x: string]: string | string[]; }) => status["id"].includes("spotify")));
@@ -17,7 +23,6 @@ await fetch("https://api.lanyard.rest/v1/users/790703402388684830").then(respons
             hidden = false;
             if (element["id"].includes("spotify")) {
                 spotify = true;
-                //FIX BROKEN TEXT WITH SPECIAL CHARACTERS
                 image = data["data"]["spotify"]["album_art_url"];
                 name = data["data"]["spotify"]["song"];
                 details = `by ${data["data"]["spotify"]["artist"]}`;

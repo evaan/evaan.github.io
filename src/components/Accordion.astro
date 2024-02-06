@@ -36,7 +36,7 @@ const { shown, index, title } = Astro.props;
     const accordion = document.getElementById(`accordion-${index}`)
     if (shown && window.innerWidth <= 640) open = false;
     if (open) {
-        accordion.style.maxHeight = window.getComputedStyle(accordion).maxHeight + "px"
+        addEventListener("load", () => accordion.nextElementSibling.style.maxHeight = accordion.nextElementSibling.scrollHeight + "px")
         accordion.querySelector("i").style.transform = "rotate(90deg)";
     }
     else accordion.nextElementSibling.style.maxHeight = "0px"
