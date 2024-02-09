@@ -49,12 +49,10 @@ const { title } = Astro.props
         <div class="flex justify-center">
             <div class="md:grid md:grid-cols-3 w-4/5 gap-3 h-screen">
                 <!-- desktop navbar -->
-                <div class="hidden md:flex items-center justify-center h-full relative" id="desktop-nav">
+                <div class="hidden md:flex items-center justify-center h-screen">
                     <div>
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/">
                             <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 font-bold">evan whelan</p>
-                            <div>
-                            </div>
                         </a>
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/projects">
                             <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">projects</p>
@@ -82,12 +80,4 @@ const { title } = Astro.props
             </div>
         </div>
     </body>
-    <script>
-        const nav = document.getElementById('desktop-nav');
-        const pageHeight = document.documentElement.scrollHeight;
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY-window.innerHeight < pageHeight) nav!.style.top = window.scrollY + "px";
-        });
-    </script>
 </html>
