@@ -26,8 +26,6 @@ const { title } = Astro.props
                 }
                 a {
                     @apply text-blue-300;
-                    @apply transition;
-                    @apply duration-200;
                 }
                 a:hover {
                     @apply bg-blue-300;
@@ -52,26 +50,26 @@ const { title } = Astro.props
                 <div class="hidden md:flex items-center justify-center h-screen">
                     <div>
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/">
-                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 font-bold">evan whelan</p>
+                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 font-bold">evan whelan</p>
                         </a>
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/projects">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">projects</p>
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800  ">projects</p>
                         </a>
                         <a class="group flex items-center hover:bg-neutral-200 p-1" href="/posts">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800  ">blog</p>
                         </a>
                     </div>
                 </div>
                 <!-- mobile navbar -->
                 <div class="md:hidden flex justify-evenly my-2">
                     <a class="group flex items-center hover:bg-neutral-200 mr-2" href="/">
-                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 font-bold transition duration-200 ">evan whelan</p>
+                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 font-bold  ">evan whelan</p>
                     </a>
-                    <a class="group flex items-center transition duration-200 hover:bg-neutral-200 mr-2" href="/projects">
-                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">projects</p>
+                    <a class="group flex items-center  hover:bg-neutral-200 mr-2" href="/projects">
+                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800  ">projects</p>
                     </a>
                     <a class="group flex items-center hover:bg-neutral-200" href="/posts">
-                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800 transition duration-200 ">blog</p>
+                        <p class="text-xl text-center text-neutral-200 group-hover:text-neutral-800  ">blog</p>
                     </a>
                 </div>
                 <div class="w-full md:col-start-2 md:col-span-2 flex items-center md:h-full">
