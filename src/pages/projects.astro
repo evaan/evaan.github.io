@@ -9,10 +9,10 @@ import Accordion from "../components/Accordion.astro";
     <div class="my-10 w-screen overflow-hidden">
         <Accordion shown={true} index={0} title="Claret">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#00ADD8] mr-1"><path d={siGo.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#61DAFB] mr-1"><path d={siReact.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#2496ED] mr-1"><path d={siDocker.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#4169E1]"><path d={siPostgresql.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siGo.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siReact.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siDocker.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200"><path d={siPostgresql.path}/></svg>
             </Fragment>
             <Fragment slot="data">
                 <p class="text-xl">
@@ -34,11 +34,11 @@ import Accordion from "../components/Accordion.astro";
         </Accordion>
         <Accordion shown={true} index={1}, title="Eastern Edge Robotics">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#61DAFB] mr-1"><path d={siReact.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#3776AB] mr-1"><path d={siPython.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#405D93] mr-1"><path d={siRos.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#00599C] mr-1"><path d={siCplusplus.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#BC52EE]"><path d={siAstro.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siReact.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siPython.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siRos.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siCplusplus.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200"><path d={siAstro.path}/></svg>
             </Fragment>
             <Fragment slot="data">
                 <p class="text-xl">
@@ -60,25 +60,26 @@ import Accordion from "../components/Accordion.astro";
         </Accordion>
         <Accordion shown={true} index={2} title="Homelab">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#E57000] mr-1"><path d={siProxmox.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#A81D33]"><path d={siDebian.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#0095D5] mr-1"><path d={siTruenas.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#2496ED] mr-1"><path d={siDocker.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#18BCF2] mr-1"><path d={siHomeassistant.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siProxmox.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siDebian.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siTruenas.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siDocker.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siHomeassistant.path}/></svg>
             </Fragment>
             <Fragment slot="data">
                 <p class="text-xl">
                     A homelab which uses Proxmox that I run as a hobby. The VMs in Proxmox include TrueNAS Core, Debian with Docker containers, and Home Assistant OS. 
+                    The server features an Intel i3-10100, an NVIDIA GTX 960, 16 GB of RAM, and 3x 6TB WD Red hard drives running in RAID Z1.
                 </p> 
             </Fragment>
         </Accordion>
         <Accordion shown={false} index={3} title="Husky Explorer 2023">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#F7DF1E] mr-1"><path d={siJavascript.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#00599C] mr-1"><path d={siCplusplus.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#3776AB] mr-1"><path d={siPython.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#FCC624] mr-1"><path d={siLinux.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-[#E34F26]"><path d={siHtml5.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siJavascript.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siCplusplus.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siPython.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siLinux.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200"><path d={siHtml5.path}/></svg>
             </Fragment>
             <Fragment slot="data">
                 <p class="text-xl">
@@ -94,7 +95,7 @@ import Accordion from "../components/Accordion.astro";
         </Accordion>
         <Accordion shown={false} index={4} title="FrostBurn">
             <Fragment slot="icons">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="32px" width="32px" role="img" class="fill-[#f89820] mr-1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="32px" width="32px" role="img" class="fill-blue-200 mr-1">
                     <path d={fab.faJava.icon[4].toString()}/>
                 </svg>
             </Fragment>
