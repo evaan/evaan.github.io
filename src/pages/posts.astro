@@ -1,14 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const posts = await Astro.glob("./posts/*.md")
+const posts = await Astro.glob("./posts/*.mdx")
 ---
 
 <Layout title="Evan Whelan - Blog Posts">
     <div class="my-10">
         <p class="text-3xl font-semibold mb-4">my blog posts</p>
         {posts.map(post => 
-            <a href={post.url} class="text-xl text-neutral-200 hover:bg-neutral-200 p-1">{post.frontmatter.title} - {post.frontmatter.date}</a>
+            <a href={post.url} class="text-xl text-neutral-200 hover:bg-neutral-200 p-1">{post.frontmatter.title} - {post.frontmatter.date}</a><br/>
         )}
     </div>
 </Layout>

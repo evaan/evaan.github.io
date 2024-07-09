@@ -1,11 +1,16 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 
+import mdx from "@astrojs/mdx";
+
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
+  integrations: [tailwind(), mdx()],
   markdown: {
-    remarkPlugins: ["remark-math"],
-    rehypePlugins: ["rehype-katex"]
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex]
   }
 });

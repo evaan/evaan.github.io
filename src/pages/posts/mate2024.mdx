@@ -1,0 +1,117 @@
+---
+layout: "/src/layouts/PostLayout.astro"
+title: "robotics guy talks about robotics things"
+date: "2024-07-03"
+---
+
+import BlogImage from "/src/components/BlogImage.astro";
+
+two weeks ago, i competed in the 2024 mate rov world championship with eastern edge. and since this years competiton has concluded, it is time to recap this years infastructure, and discuss ideas for 2025.
+
+import mate2024beaumont from "/src/images/mate2024beaumont.png"
+
+<BlogImage src={mate2024beaumont} alt="our rov for 2024, named beaumont" />
+
+### the gui
+this year i pitched the idea of using a web-based gui using react, which ended up becoming the main control interface.
+the gui did everything we needed: sliders for thruster modifiers, camera control, control profiles, while being very customizable.
+
+my main concern is that it may have been **too** customizable, where the code became clunky for seemingly no reason. when developing our control profiles, we had created an entire sqlite database, which then caused some issues with connecting to the database on startup, adding time to our run.
+
+this just feels bloated, and can easily be replaced with importing a json file when you open the website or something of the sort.
+
+the website also seemed to perform poorly, trying to resubscribe to ros topics several times a second for seemingly no reason, importing a json which then connects to ros and initializes all controls would likely be a cleaner and simpler solution.
+
+this also is a good transition to how we communicate to the bot itself.
+
+### ros (control shenanigans)
+ros, which is what we used this year, allows us to send different topics to different programs, which allows us to have debug info, thruster modifiers, controller data, and tooling commands all at the same time, to different nodes on the same machine. ros was initially considered due to its wide variety of use in the robotics industry, and was kept for its modularity and the ease of expansion.
+
+unfortunately ros also had some limitations. officially, ros only supports python and c++, which is fine until you decide to create a frontend like we did using react. connecting the react gui to the ros network required a ros library called [roslibjs](https://github.com/RobotWebTools/roslibjs) which connects to rosbridge and allows communication to the ros network using websockets. this worked pretty well overall, however there was an exponential latency issue which became a big issue. funnily enough, the issue was identified and a likely fix was created immediately after the competition ended, and will be tested in the near future.
+
+this latency issue seems to be an issue with our frontend subscribing to topics, as when removing adc and temperature sensor topics it seemed to work fine. this is likely not a problem with ros, but an issue with our configuration. the latency issue was a problem earlier on in the year, although during the runs it only started happening about ~10 minutes into a run, which is solved by a simple page refresh.
+
+ros also allowed us to have one of the best features that we have developed this year, allowing for a simulation of the rov in a test area allowing for a full simulated run of beaumont (the rov). this allowed us to easily calculate thruster math, to ensure that forces are correct, and gave our pilot testing time when the bot was unable to be driven.
+
+import mate2024sim from "/src/images/mate2024sim.png"
+import mate2024real from "/src/images/mate2024real.png"
+
+<div class="flex">
+<BlogImage src={mate2024sim} alt="control interface piloting simulated rov" />
+<BlogImage src={mate2024real} alt="control interface piloting the actual rov" />
+</div>
+
+### vertical profiler
+my personal favourite contribution is the firmware for the vertical profiling float. the vertical profiler was a relatively simple pcb, with an esp32 along with a dc and stepper motor driver (as we didn't know what motor we were using at the time), and worked pretty well. the firmware i had created was also pretty simple, using an esp32 dev kit as a receiever and using esp-now to communicate between the profiler and the reciever.
+
+import mate2024profiler from "/src/images/mate2024profiler.png"
+
+<BlogImage src={mate2024profiler} alt="profiler cad model" />
+
+unfortunately water does a really good job at blocking 2.4 ghz (or really any lower frequency for that matter) and so we lose connection almost instantly upon deployment. we had two solutions in mind: using lora, or just queueing the data and dumping it upon resurface. considering that lora is relatively expensive, and nobody on the team had familiarity with it, we went with the latter.
+
+the reciever created an access point and web server which a device could connect to, then the user can send a post request to the server, which would then make the reciever communicate to the profiler. the receiver also logs time and graphs depth over time (as required by mission spec) with the profilers pressure sensor, a bluerobotics [bar02](https://bluerobotics.com/store/sensors-cameras/sensors/bar02-sensor-r1-rp).
+
+the profiler worked great out of the water and in shallow pools, although we had issues in tennessee where the depth sensor data wasn't being updated, which turned out to be 100% skill issue and was because i had forgotton to actually read the sensor data.
+
+```diff
+void loop() {
++ sensor.read();
+  ElegantOTA.loop();
+}
+```
+
+in deep water (which is basically the only thing that matters) however, it sucked up water to lower buoyancy, but when it tried to release water to re-surface the motor which was run on a timer wasn't long enough to push all the water out under that pressure, which left it stuck at the bottom of the pool.
+
+```cpp
+#define TIMEOUT 19000
+
+void profile(void * parameter) {
+  profiling = true;
+  message.time = millis();
+  strcpy(message.text, "Profile commencing!");
+  esp_now_send(broadcastAddress, (uint8_t *) &message, sizeof(message));
+
+  digitalWrite(IN1PIN, HIGH);
+  TickType_t startTick = xTaskGetTickCount();
+  while (digitalRead(BUTTONPIN) == 1) vTaskDelay(10 * portTICK_PERIOD_MS);
+  digitalWrite(IN2PIN, HIGH);
+  vTaskDelay(SINKTIME * portTICK_PERIOD_MS);
+  digitalWrite(IN1PIN, LOW);
+  //the following line is what was causing the profiler to not release enough water:
+  vTaskDelay(TIMEOUT * portTICK_PERIOD_MS);
+  digitalWrite(IN2PIN, LOW);
+
+  profiling = false;
+  message.time = millis();
+  strcpy(message.text, "Profile complete!");
+  esp_now_send(broadcastAddress, (uint8_t *) &message, sizeof(message));
+  vTaskSuspend(xTaskGetCurrentTaskHandle());
+}
+```
+
+overall, i think that if we fix that issue and assuming profiler is a task for next year, i believe that we can easily get full points for it with a few minor mechanical tweaks.
+
+### electrical
+
+our electrical system this year consisted of two boards: our power board, which took the 48 volts from the surface, and convered it to 12 and 5 volts for our components on our second board, codenamed mega board. 
+
+import mate2024megaboard from "/src/images/mate2024megaboard.png"
+
+<BlogImage src={mate2024megaboard} alt="a render of mega board in kicad" />
+
+mega board houses everything the rov will need, including microcontrollers, motor drivers, as well as the ability to mount a raspberry pi and imu.
+
+overall, mega board worked great, with any issue being related to things that were not the fault of the board (i.e. our 5v to 3v3 ldo got hit with reverse voltage, causing it to die and kill our pca9685 and possibly the rp2040?).
+
+when our pca9685 dropped out and started spamming random addresses after being overvolted, we had to adapt quickly. our solution was to use the rp2040 which was also installed, to communicate with the thrusters. this ended up being easier, as rather than using a library like adafruits pca9685 library, we can just send the 2040 the thruster we want to set, followed by the power we want the thruster to run at.
+
+### whats the play for next year?
+
+this year, we were pretty late when it came to the completion of electrical boards, which gave our pilot less time to practice. when looking at other teams (more specifically winning teams), they would trade off cool new features for a driveable bot completed as soon as possible, giving the pilot more practice to complete all of the mission tasks.
+
+completing the rov as soon as possible allows us to also focus on improving our presentation, technical documentation, and marketing display which are also required for the competition (and also worth a lot of points). i believe that we should wire things by hand (at least for things not regarding power conversion), rather than creating a pcb, allowing for quicker construction time, and completely removing the time that was used for pcb review.
+
+this is a hot topic among the team right now and will be discussed in the near future, although i do believe that our team could place in the top 3 if we focus on creating an rov as soon as possible, then adding features on top of it, rather than spending months designing a pcb, and waiting on that to arrive to construct the bot. this allows significantly more practice for our pilot, and drastically decreases the stress level towards competition.
+
+this year we placed ninth out of 29 teams, which is great, but i believe that if the pilot gets more practice, and we get more testing with next years non-rov device, we can easily do better.
