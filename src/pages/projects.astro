@@ -25,14 +25,32 @@ import Accordion from "../components/Accordion.astro";
                         <p class="text-2xl leading-none">/ClaretForMUN.com</p>
                     </a>
                     <div class="basis-full md:hidden" />
-                    <a class="group flex items-center p-1" href="https://github.com/evaan" target="_blank">
+                    <a class="group flex items-center p-1" href="https://github.com/evaan/Claret" target="_blank">
                         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
                         <p class="text-2xl leading-none">/evaan/Claret</p>
                     </a>
                 </div>
             </Fragment>
         </Accordion>
-        <Accordion shown={true} index={1}, title="Eastern Edge Robotics">
+        <Accordion shown={true} index={1} title="invengory">
+            <Fragment slot="icons">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siGo.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siReact.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200"><path d={siPostgresql.path}/></svg>
+            </Fragment>
+            <Fragment slot="data">
+                <p class="text-xl">
+                    invengory is a project initially designed for Eastern Edge. This project aims to create a simple, yet powerful open-source inventory management system.
+                </p>
+                <div class="flex flex-wrap items-center">
+                    <a class="group flex items-center p-1" href="https://github.com/evaan/invengory" target="_blank">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
+                        <p class="text-2xl leading-none">/evaan/invengory</p>
+                    </a>
+                </div>
+            </Fragment>
+        </Accordion>
+        <Accordion shown={true} index={2}, title="Eastern Edge Robotics">
             <Fragment slot="icons">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siReact.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siPython.path}/></svg> 
@@ -42,8 +60,8 @@ import Accordion from "../components/Accordion.astro";
             </Fragment>
             <Fragment slot="data">
                 <p class="text-xl">
-                    I am currently a software team member as well as GUI lead for Eastern Edge Robotics. The software will be used for the ROV competing in the 2024 <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a> in Kingsport, Tennessee next June!
-                    Alongside being a software member, I am also assisting in rewriting the website using Astro and React!
+                    I am currently the software co-lead for Eastern Edge Robotics, which is competing in the 2024 <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a> in Alepna, Michegan next June!
+                    In addition to being the software co-lead, I have assisted in designing a new website using Astro!
                 </p>
                 <div class="flex flex-wrap items-center">
                     <a class="group flex items-center p-1 mr-2" href="https://easternedgerobotics.com" target="_blank">
@@ -58,7 +76,7 @@ import Accordion from "../components/Accordion.astro";
                 </div> 
             </Fragment>
         </Accordion>
-        <Accordion shown={true} index={2} title="Homelab">
+        <Accordion shown={false} index={3} title="Homelab">
             <Fragment slot="icons">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siProxmox.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siDebian.path}/></svg>
@@ -73,7 +91,7 @@ import Accordion from "../components/Accordion.astro";
                 </p> 
             </Fragment>
         </Accordion>
-        <Accordion shown={false} index={3} title="Husky Explorer 2023">
+        <Accordion shown={false} index={4} title="Husky Explorer 2023">
             <Fragment slot="icons">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siJavascript.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siCplusplus.path}/></svg> 
@@ -93,7 +111,7 @@ import Accordion from "../components/Accordion.astro";
                 </div> 
             </Fragment>
         </Accordion>
-        <Accordion shown={false} index={4} title="FrostBurn">
+        <Accordion shown={false} index={5} title="FrostBurn">
             <Fragment slot="icons">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="32px" width="32px" role="img" class="fill-blue-200 mr-1">
                     <path d={fab.faJava.icon[4].toString()}/>
