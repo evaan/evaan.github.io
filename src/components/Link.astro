@@ -1,0 +1,15 @@
+---
+import { siGithub } from 'simple-icons';
+
+const {label, link, github} = Astro.props;
+---
+
+<a class="group flex items-center p-1 mr-2" href={link} target="_blank">
+    { !github &&
+        <i data-lucide="link" class="stroke-blue-300  fill-none group-hover:stroke-neutral-800 h-5 w-5 lg:w-6 lg:h-6"/>
+    }
+    { github &&
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fill-blue-300 mr-0.5 group-hover:fill-neutral-800 h-5 w-5 lg:w-6 lg:h-6"><path d={siGithub.path}/></svg> 
+    }
+    <p class="text-xl leading-none">/{label}</p>
+</a>

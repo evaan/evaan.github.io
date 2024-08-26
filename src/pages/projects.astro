@@ -1,141 +1,86 @@
 ---
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import { siGo, siReact, siDocker, siPostgresql, siPython, siRos, siCplusplus, siAstro, siProxmox, siDebian, siTruenas, siHomeassistant, siJavascript } from "simple-icons";
 import Layout from "../layouts/Layout.astro";
-import { siAstro, siCplusplus, siDebian, siDocker, siGithub, siGo, siHomeassistant, siHtml5, siJavascript, siLinux, siPostgresql, siProxmox, siPython, siReact, siRos, siTruenas } from "simple-icons";
-import Accordion from "../components/Accordion.astro";
+import Project from "../components/Project.astro";
+import Link from "../components/Link.astro";
 ---
 
+<style>
+    svg {
+        @apply fill-neutral-200
+    }
+</style>
 <Layout title="Evan Whelan - Projects">
-    <div class="my-10 w-screen overflow-hidden">
-        <Accordion shown={true} index={0} title="Claret">
+    <div class="my-10">
+        <p class="text-3xl font-semibold mb-4">my current projects</p>
+        <Project name="Claret">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siGo.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siReact.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siDocker.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200"><path d={siPostgresql.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siGo.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class=""><path d={siPostgresql.path}/></svg>        
             </Fragment>
-            <Fragment slot="data">
-                <p class="text-xl">
-                    Claret is a collection of tools created to assist Memorial University students. The primary focus of Claret is an easy to use schedule builder (written in React) allowing for
-                    significantly easier planning semesters prior to course registration. Claret also consists of a Scraper, API, ICS Server, and Discord Bot all written in Go.
-                </p>
-                <div class="flex flex-wrap items-center">
-                    <a class="group flex items-center p-1 mr-2" href="https://claretformun.com" target="_blank">
-                        <i data-lucide="link" class="stroke-blue-300  group-hover:stroke-neutral-800"/>
-                        <p class="text-2xl leading-none">/ClaretForMUN.com</p>
-                    </a>
-                    <div class="basis-full md:hidden" />
-                    <a class="group flex items-center p-1" href="https://github.com/evaan/Claret" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                        <p class="text-2xl leading-none">/evaan/Claret</p>
-                    </a>
-                </div>
+            <Fragment slot="description">
+                Claret is an easy to use tool to assist in course selection for Memorial University students.    
             </Fragment>
-        </Accordion>
-        <Accordion shown={true} index={1} title="invengory">
+            <Fragment slot="links">
+                <Link label="ClaretForMUN.com" link="https://claretformun.com" />
+                <Link label="evaan/Claret" link="https://github.com/evaan/Claret" github />
+            </Fragment>
+        </Project>
+        <Project name="invengory">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siGo.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siReact.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200"><path d={siPostgresql.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siGo.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siPostgresql.path}/></svg>        
             </Fragment>
-            <Fragment slot="data">
-                <p class="text-xl">
-                    invengory is a project initially designed for Eastern Edge. This project aims to create a simple, yet powerful open-source inventory management system.
-                </p>
-                <div class="flex flex-wrap items-center">
-                    <a class="group flex items-center p-1" href="https://github.com/evaan/invengory" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                        <p class="text-2xl leading-none">/evaan/invengory</p>
-                    </a>
-                </div>
+            <Fragment slot="description">
+                invengory is a project initially designed for Eastern Edge. This project aims to create a simple, yet powerful open-source inventory management system.
             </Fragment>
-        </Accordion>
-        <Accordion shown={true} index={2}, title="Eastern Edge Robotics">
+            <Fragment slot="links">
+                <Link label="evaan/invengory" link="https://github.com/evaan/invengory" github />
+            </Fragment>
+        </Project>
+        <Project name="Eastern Edge Robotics">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siReact.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siPython.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siRos.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siCplusplus.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200"><path d={siAstro.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siPython.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siRos.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siCplusplus.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siAstro.path}/></svg>
             </Fragment>
-            <Fragment slot="data">
-                <p class="text-xl">
-                    I am currently the software co-lead for Eastern Edge Robotics, which is competing in the 2024 <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a> in Alepna, Michegan next June!
-                    In addition to being the software co-lead, I have assisted in designing a new website using Astro!
-                </p>
-                <div class="flex flex-wrap items-center">
-                    <a class="group flex items-center p-1 mr-2" href="https://easternedgerobotics.com" target="_blank">
-                        <i data-lucide="link" class="stroke-blue-300  group-hover:stroke-neutral-800"/>
-                        <p class="text-[22px] md:text-2xl leading-none">/EasternEdgeRobotics.com</p>
-                    </a>
-                    <div class="basis-full md:hidden" />
-                    <a class="group flex items-center p-1" href="https://github.com/easternedgerobotics/software_2024" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                        <p class="text-2xl leading-none">/EER/Software_2024</p>
-                    </a>
-                </div> 
+            <Fragment slot="description">
+                I am currently the software co-lead for Eastern Edge Robotics, which is competing in the 2024 <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a> in Alepna, Michegan next June!
+                I have also assisted in overhauling the website with Astro!
             </Fragment>
-        </Accordion>
-        <Accordion shown={false} index={3} title="Homelab">
+            <Fragment slot="links">
+                <Link label="EasternEdgeRobotics.com" link="https://easternedgerobotics.com" />
+                <Link label="EER/Software_2024" link="https://github.com/easternedgerobotics/software_2024" github/>
+            </Fragment>
+        </Project>
+        <Project name="Homelab">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siProxmox.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siDebian.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siTruenas.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siDocker.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siHomeassistant.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siProxmox.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDebian.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siTruenas.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siHomeassistant.path}/></svg>
             </Fragment>
-            <Fragment slot="data">
-                <p class="text-xl">
-                    A homelab which uses Proxmox that I run as a hobby. The VMs in Proxmox include TrueNAS Core, Debian with Docker containers, and Home Assistant OS. 
-                    The server features an Intel i3-10100, an NVIDIA GTX 960, 16 GB of RAM, and 3x 6TB WD Red hard drives running in RAID Z1.
-                </p> 
+            <Fragment slot="description">
+                A homelab I run as a hobby, running a media server, game servers, hosting backups, as well as hosting any projects that I may be working on.
             </Fragment>
-        </Accordion>
-        <Accordion shown={false} index={4} title="Husky Explorer 2023">
-            <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siJavascript.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siCplusplus.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siPython.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200 mr-1"><path d={siLinux.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="fill-blue-200"><path d={siHtml5.path}/></svg>
-            </Fragment>
-            <Fragment slot="data">
-                <p class="text-xl">
-                    The Husky Explorer competed in the 2023 Mate ROV World Championship that took place in Longmont, Colorado in June of 2023.
-                    The repository contains all of the code used by Husky Explorer that year, including the software control system, and the vertical profiling float.             </p>
-                <div class="flex items-center">
-                    <a class="group flex items-center p-1" href="https://github.com/evaan/huskyexplorer2023" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                        <p class="text-2xl leading-none">/evaan/HuskyExplorer2023</p>
-                    </a>
-                </div> 
-            </Fragment>
-        </Accordion>
-        <Accordion shown={false} index={5} title="FrostBurn">
-            <Fragment slot="icons">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="32px" width="32px" role="img" class="fill-blue-200 mr-1">
-                    <path d={fab.faJava.icon[4].toString()}/>
-                </svg>
-            </Fragment>
-            <Fragment slot="data">
-                <p class="text-xl">
-                    A Minecraft utility mod created using the Fabric Modding API for 1.17.1, this mod included several features such as a custom ClickGUI using the <a href="https://github.com/ocornut/imgui" target="_blank">ImGui</a> library.
-                </p>
-                <div class="flex items-center">
-                    <a class="group flex items-center p-1" href="https://github.com/evaan/frostburn" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-blue-300 mr-0.5 group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                        <p class="text-2xl leading-none">/evaan/FrostBurn</p>
-                    </a>
-                </div> 
-            </Fragment>
-        </Accordion>
+        </Project>
+        <p class="text-2xl font-semibold mt-4">my older projects</p>
+        <p class="text-md"><a href="https://github.com/evaan/frostburn" target="_blank">Frostburn</a> - A utility mod for Minecraft</p>
+        <p class="text-md"><a href="https://github.com/evaan/huskyexplorer2023" target="_blank">Husky Explorer 2023</a> - Code for the Husky Explorer, which competed in Longmont, CO in 2023.</p>
     </div>
-    <script>
-        import { createIcons, Link } from "lucide";
-        createIcons({
-            icons: {
-                Link
-            }
-        })
-    </script>
 </Layout>
+<script>
+    import { createIcons, Link } from "lucide";
+    createIcons({
+        icons: {
+            Link
+        }
+    })
+</script>
