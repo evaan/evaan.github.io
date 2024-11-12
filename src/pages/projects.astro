@@ -1,5 +1,5 @@
 ---
-import { siGo, siReact, siDocker, siPostgresql, siPython, siRos, siCplusplus, siAstro, siProxmox, siDebian, siTruenas, siHomeassistant, siJavascript } from "simple-icons";
+import { siGo, siReact, siDocker, siPostgresql, siPython, siRos, siCplusplus, siAstro, siProxmox, siDebian, siTruenas, siHomeassistant, siC } from "simple-icons";
 import Layout from "../layouts/Layout.astro";
 import Project from "../components/Project.astro";
 import Link from "../components/Link.astro";
@@ -28,25 +28,12 @@ import Link from "../components/Link.astro";
                 <Link label="evaan/Claret" link="https://github.com/evaan/Claret" github />
             </Fragment>
         </Project>
-        <Project name="invengory">
-            <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siGo.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siPostgresql.path}/></svg>        
-            </Fragment>
-            <Fragment slot="description">
-                invengory is a project initially designed for Eastern Edge Robotics. It aims to deliver a robust, simple, open-source inventory management system.
-            </Fragment>
-            <Fragment slot="links">
-                <Link label="evaan/invengory" link="https://github.com/evaan/invengory" github />
-            </Fragment>
-        </Project>
         <Project name="Eastern Edge Robotics">
             <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siPython.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siRos.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siCplusplus.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siC.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siRos.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siAstro.path}/></svg>
             </Fragment>
@@ -69,6 +56,19 @@ import Link from "../components/Link.astro";
             </Fragment>
             <Fragment slot="description">
                 A homelab I run as a hobby, running a media server, game servers, hosting backups, as well as hosting any projects that I may be working on.
+            </Fragment>
+        </Project>
+        <Project name="invengory">
+            <Fragment slot="icons">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siGo.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg> 
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siPostgresql.path}/></svg>        
+            </Fragment>
+            <Fragment slot="description">
+                invengory is a project initially designed for Eastern Edge Robotics. It aims to deliver a robust, simple, open-source inventory management system.
+            </Fragment>
+            <Fragment slot="links">
+                <Link label="evaan/invengory" link="https://github.com/evaan/invengory" github />
             </Fragment>
         </Project>
         <p class="text-2xl font-medium mt-4">my older projects</p>

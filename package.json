@@ -10,13 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/mdx": "^3.1.4",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/tailwind": "^5.1.2",
     "@fontsource/inter": "^5.0.16",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^4.14.3",
+    "astro": "^4.16.10",
     "lucide": "^0.321.0",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
