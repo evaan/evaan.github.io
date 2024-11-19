@@ -1,5 +1,5 @@
 ---
-import { siGo, siReact, siDocker, siPostgresql, siPython, siRos, siCplusplus, siAstro, siProxmox, siDebian, siTruenas, siHomeassistant, siC } from "simple-icons";
+import { siGo, siReact, siDocker, siPostgresql, siPython, siRos, siCplusplus, siAstro, siProxmox, siDebian, siTruenas, siHomeassistant, siC, siNixos } from "simple-icons";
 import Layout from "../layouts/Layout.astro";
 import Project from "../components/Project.astro";
 import Link from "../components/Link.astro";
@@ -48,14 +48,14 @@ import Link from "../components/Link.astro";
         </Project>
         <Project name="Homelab">
             <Fragment slot="icons">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siNixos.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siProxmox.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDebian.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siTruenas.path}/></svg> 
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siHomeassistant.path}/></svg>
             </Fragment>
             <Fragment slot="description">
-                A homelab I run as a hobby, running a media server, game servers, hosting backups, as well as hosting any projects that I may be working on.
+                A homelab I run as a hobby, running a media server, game servers, hosting backups, as well as hosting any projects that I may be working on. I am currently in the progress of migrating my homelab to NixOS!
             </Fragment>
         </Project>
         <Project name="invengory">
