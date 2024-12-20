@@ -1,6 +1,6 @@
 <script>
     class Snow extends HTMLElement {
-        static random(min, max) {
+        static random(min: number, max: number) {
             return min + Math.floor(Math.random() * (max - min) + 1);
         }
     
@@ -10,7 +10,7 @@
             text: "text", // text in snow flake (emoji, too)
         }
     
-        generateCss(mode, count) {
+        generateCss(mode: string | null, count: number) {
             let css = [];
             css.push(`
     :host([mode="element"]) {
@@ -51,8 +51,8 @@
     
             if(mode === "element") {
                 dimensions = {
-                    width: this.firstElementChild.clientWidth,
-                    height: this.firstElementChild.clientHeight,
+                    width: this.firstElementChild!.clientWidth,
+                    height: this.firstElementChild!.clientHeight,
                 };
                 units = { x: "px", y: "px"};
             }
@@ -106,7 +106,7 @@
     
             console.log("December, its time for snowflakes");
     
-            let count = parseInt(this.getAttribute(Snow.attrs.count)) || 100;
+            let count = parseInt(this.getAttribute(Snow.attrs.count)!) || 100;
     
             let mode;
             if(this.hasAttribute(Snow.attrs.mode)) {
