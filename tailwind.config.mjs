@@ -15,6 +15,7 @@ export default {
 		require('@tailwindcss/typography'),
 		plugin(function ({ addVariant }) {
 			addVariant('mobile-only', "@media screen and (max-width: theme('screens.sm'))");
+			addVariant('non-mobile', "@media screen and (min-width: theme('screens.sm'))");
 		}),
 	],
 	site: 'https://evaan.dev',

@@ -1,14 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { siRss } from "simple-icons";
 
 const posts = await Astro.glob("./posts/*.mdx")
 ---
 
 <Layout title="Evan Whelan - Blog Posts">
-    <div class="my-10">
-        <p class="text-3xl font-medium mb-4">my blog posts</p>
-        {posts.map(post => 
-            <a href={post.url} class="text-xl text-neutral-200 hover:bg-neutral-200 p-1">{post.frontmatter.title} - {post.frontmatter.date}</a><br/>
-        )}
+    <div class="my-10 flex justify-center w-full">
+        <div>
+            <div class="flex items-center">
+                <p class="text-3xl font-medium ml-1">My Blog Posts</p>
+                <a class="group flex items-center hover:bg-blue-300 active:bg-blue-300 ml-2 p-1" href="posts/rss.xml">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" class="fill-blue-300 group-hover:fill-neutral-800 group-active:fill-neutral-800">
+                        <path d={siRss.path} />
+                    </svg>
+                </a>
+            </div>
+            {posts.sort((a, b) => b.frontmatter.date.localeCompare(a.frontmatter.date)).map(post =>
+                <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 my-2 mobile-only:w-full p-0.5" href={post.url}>
+                    <p class="text-xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">{post.frontmatter.title} - {post.frontmatter.date}</p>
+                </a>
+            )}
+        </div>
     </div>
 </Layout>

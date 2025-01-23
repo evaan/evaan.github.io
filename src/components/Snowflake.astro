@@ -100,11 +100,8 @@
             const currentMonth = currentDate.getMonth();
     
             if (currentMonth !== 11) {
-                console.log("Not December, no snowflakes");
                 return;
             }
-    
-            console.log("December, its time for snowflakes");
     
             let count = parseInt(this.getAttribute(Snow.attrs.count)!) || 100;
     

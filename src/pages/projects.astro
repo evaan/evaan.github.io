@@ -1,5 +1,5 @@
 ---
-import { siGo, siReact, siDocker, siPostgresql, siPython, siRos, siCplusplus, siAstro, siProxmox, siDebian, siTruenas, siHomeassistant, siC, siNixos } from "simple-icons";
+import { siGo, siReact, siDocker, siPostgresql, siPython, siRos, siCplusplus, siAstro, siHomeassistant, siC, siNixos, siLinux } from "simple-icons";
 import Layout from "../layouts/Layout.astro";
 import Project from "../components/Project.astro";
 import Link from "../components/Link.astro";
@@ -32,25 +32,25 @@ import Link from "../components/Link.astro";
             <Fragment slot="icons">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siCplusplus.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siC.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siRos.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siAstro.path}/></svg>
             </Fragment>
             <Fragment slot="description">
-                I am currently the Software Co-Lead for Eastern Edge Robotics, which will compete in the 2024 <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a> in Alpena, Michigan, next June!
-                In addition to my role as Co-Lead, I've also contributed to overhauling the team's website using Astro.
+                I am currently the Software Co-Lead for Eastern Edge Robotics, where I contribute to the development of software (both frontend and backend) and firmware for our ROV and other non-ROV devices.
+                Last year, we competed in Kingsport, Tennessee (our codebase can be found <a href="https://github.com/easternedgerobotics/software_2024" target="_blank">here</a>).
+                This year, I am working on the firmware for the Vertical Profiling Float, the microcontroller firmware for our ROV, and a new control UI written in C++.
             </Fragment>
             <Fragment slot="links">
                 <Link label="EasternEdgeRobotics.com" link="https://easternedgerobotics.com" />
-                <Link label="EER/Software_2024" link="https://github.com/easternedgerobotics/software_2024" github/>
+                <Link label="EER/Software_2025" link="https://github.com/easternedgerobotics/software_2025" github/>
             </Fragment>
         </Project>
         <Project name="Homelab">
             <Fragment slot="icons">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siNixos.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siProxmox.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDebian.path}/></svg>
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siLinux.path}/></svg> 
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siHomeassistant.path}/></svg>
             </Fragment>
