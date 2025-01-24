@@ -7,7 +7,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				"inter": ["Inter"],
+				"mulish": ["Mulish"],
 			},
 		},
 	},

@@ -1,5 +1,5 @@
 ---
-import '@fontsource/inter'
+import '@fontsource/mulish'
 import Snowflake from '../components/Snowflake.astro';
 
 interface Props {
@@ -23,7 +23,7 @@ const { title } = Astro.props
                 body {
                     @apply bg-neutral-800;
                     @apply text-neutral-200;
-                    @apply font-inter;
+                    @apply font-mulish;
                 }
                 a {
                     @apply text-blue-300;
@@ -55,8 +55,26 @@ const { title } = Astro.props
     <body>
         <Snowflake></Snowflake>
         <div class="flex justify-center">
-            <div class="w-4/5 lg:w-3/5 h-screen">
-                <div class="flex mobile-only:flex-col non-mobile::flex-row gap-x-8 lg:gap-x-16 w-full justify-center items-center mt-2">
+            <div class="md:grid md:grid-cols-4 w-[90%] gap-6 h-screen">
+                <!-- desktop navbar -->
+                <div class="hidden md:flex items-center justify-center h-screen">
+                    <div>
+                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/">
+                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800 font-medium">evan whelan</p>
+                        </a>
+                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/projects">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">projects</p>
+                        </a>
+                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/posts">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">blog</p>
+                        </a>
+                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/interests">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">interests</p>
+                        </a>
+                    </div>
+                </div>
+                <!-- mobile navbar -->
+                <div class="flex md:hidden mobile-only:flex-col non-mobile::flex-row gap-x-8 lg:gap-x-16 w-full justify-center items-center mt-2">
                     <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 mt-2" href="/">
                         <p class="mobile-only:text-4xl text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">evan whelan</p>
                     </a>
@@ -72,7 +90,7 @@ const { title } = Astro.props
                         </a>
                     </div>
                 </div>
-                <div class="w-full pb-2">
+                <div class="w-full md:col-start-2 md:col-span-3 flex items-center md:h-full">
                     <slot />
                 </div>
             </div>

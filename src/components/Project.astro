@@ -5,17 +5,19 @@ interface Props {
 const {name} = Astro.props;
 ---
 
-<div class="flex items-center">
-    <p class="text-2xl mr-2">
-        {name}
+<div class="my-4">
+    <div class="flex items-center my">
+        <p class="text-2xl mr-2">
+            {name}
+        </p>
+        <span class="inline-flex mobile-only:hidden"> 
+            <slot name="icons" />    
+        </span>
+    </div>
+    <p class="text-lg indent-4">
+        <slot name="description">
     </p>
-    <span class="inline-flex mobile-only:hidden"> 
-        <slot name="icons" />    
-    </span>
-</div>
-<p class="text-lg indent-4">
-    <slot name="description">
-</p>
-<div class="flex flex-wrap items-center mb-2">
-    <slot name="links" />
+    <div class="flex flex-wrap items-center mb-2">
+        <slot name="links" />
+    </div>
 </div>
