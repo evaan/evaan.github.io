@@ -1,7 +1,94 @@
 ---
 layout: "/src/layouts/PostLayout.astro"
 title: "Migrating my homelab to Nix"
-date: "2025-01-26"
+pubDate: "2025-02-09"
 ---
 
+import nixosLogo from "/src/images/nixos-white.png"
+
 import BlogImage from "/src/components/BlogImage.astro";
+
+<BlogImage src={nixosLogo} alt="" width="384" />
+
+Since about 2016-17, I have been learning Linux, and around Late 2019-Early 2020 I started my own "homelab", consisting of a Raspberry Pi 3 running Raspbian.
+
+My method of deploying services at this point consisted of installing a package through a repo, and enabling a systemd service. This worked, but cleaning up configs, and running multiple instances isn't particilarly ideal.  
+I knew about Docker, but seeing big commands (which in hindsight were pretty simple), was pretty intimidating so I never decided to learn it. That was, until a few years ago when I started learning Docker Compose, which made
+me realize that Docker wasnt nearly as complicated as I thought it was.
+
+Over the years I ended up learning Docker, with my homelab increasing by a few laptops, all running Portainer so I could easily manage containers in each machine.  
+In 2022, I purchased a full desktop, housing an i3-10100, and a GTX 960. After a while, I ended up installing Proxmox, with TrueNAS, and Debian.
+
+This is basically how it ran until late last year, when I heard about using NixOS for a homelab. I had learned about NixOS a while ago, but the declarative aspect for desktop seemed a little intimidating.  
+However, this steep learning curve did seem interesting, and allows for a modular homelab setup, which lets me share modules between devices.
+
+## Initial Struggles
+
+NixOS is a pretty steep learning curve, and declaring every aspect of your operating system is a pretty daunting process, but it ends up making life so much easier when it's done. Setting up Home Manager
+seemed to be more work than it should've been, but it was a set and forget kind of thing, and it applies to all of my systems so it wasn't too bad overall.
+
+### The qBittorrent Kerfuffle
+
+Initially, I wanted to move away from Docker. I'm still not sure why I wanted to do this, as it just made everything harder, especially dealing with tunnelling my torrent client traffic through a VPN.  
+
+I spent so much time looking into alternatives, such as [NixOS Containers](https://nixos.wiki/wiki/NixOS_Containers). At this point I realized, why am I doing everything other than just using Docker?
+
+## Switching (back) to Docker
+
+After remembering that Docker is the best piece of software in existence, I switched back, using NixOS' OCI Containers, it allowed me to easily declare every container I want... just like docker compose, with extra steps.
+But where's the fun in that? A homelab requires constant upkeep and tinkering, that's what makes it a hobby!
+
+Setting up a docker container using Nix is not much more than this:
+```nix
+{ lib, ...}: {
+  imports = [ ../misc/gluetun.nix ];
+
+  virtualisation.oci-containers.containers."qbittorrent" = {
+    image = "docker.io/linuxserver/qbittorrent:latest";
+    autoStart = true;
+    dependsOn = [ "gluetun" ];
+    extraOptions = [
+      "--network=container:gluetun"
+      "--memory=4g"
+    ];
+    environment = {
+      PUID = "1000";
+      PGID = "1000";
+      WEBUI_PORT = "8080";
+      TORRENTING_PORT = "6881";
+      DOCKER_MODS = "ghcr.io/vuetorrent/vuetorrent-lsio-mod:latest";
+    };
+    volumes = [
+      "qbittorrent-config:/config"
+      "/mnt/storage:/media"
+      "/etc/localtime:/etc/localtime:ro"
+    ];
+  };
+}
+```
+The code above is my qbittorrent.nix file, which does nothing crazy. It imports gluetun.nix, if it isn't imported before, as qBit and Prowlarr both depend on it.
+
+If you're ever unsure about what option you may need to set something as (for example, setting the network to contianer:gluetun), the sacret texts of [NixOS Options](https://search.nixos.org/options) are there for just that.
+
+## Secrets Management
+
+If you're uploading your OS' config, you'll likely have some strings you don't want public (private keys, passwords, etc.), and you'll want to use a secrets manager to encrypt these if you decide to upload this your flake to the internet.  
+The video below is an amazing 3-part guide on how to setup secrets using [sops-nix](https://github.com/Mic92/sops-nix), and made it super easy to setup:
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6EMNHDOY-wo?si=xyA6xu8-ebLbjYmt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## I hate NVIDIA (and/or don't know how to configure Plex)
+
+Every service was working pretty well, basically on par with how it was before. Except for Plex, as my server has an GTX 960 as mentioned previously, I need to use the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html) in order for
+containers to have access to the GPU. Plex doesn't particularly *need* this in order to operate, although it allows for more transcodes to happen at once vs. transcoding using my CPU.
+
+After enabling NVIDIA in Docker (which for some reason is deprecated, and the replacement doesn't work?) the container has access to the gpu with nvidia-smi, and Plex sees the GPU!
+This is progress, but unfortunately Plex still refuses to use the GPU. And ***finally***, after months of searching at this point, I found [this thread](https://forums.plex.tv/t/preferred-hw-transcoder-linux/593507/11), which ended up solving the issue!
+
+## Conclusion
+
+I probably forgot more issues I had, but the repo is [here](https://github.com/evaan/homelab) for anyone interested in having a look.
+
+I'll probably work on this for the rest of time so it'll be always changing, I am currently working on implementing a [tModLoader](https://github.com/tModLoader/tModLoader) server using Nix.
+
+Unlike [Keenan's introduction to homelabbing](https://blog.pirated.tech/posts/servarr/) I think that avoiding overcomplicating is for nerds and removes the whole fun of troubleshooting for weeks.
