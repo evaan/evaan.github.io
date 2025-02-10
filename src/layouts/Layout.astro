@@ -21,20 +21,13 @@ const { title } = Astro.props
 
             @layer base {
                 body {
-                    @apply bg-neutral-800;
-                    @apply text-neutral-200;
-                    @apply font-mulish;
+                    @apply bg-neutral-800 text-neutral-200 font-mulish;
                 }
                 a {
                     @apply text-blue-300;
                 }
-                a:hover {
-                    @apply bg-blue-300;
-                    @apply text-neutral-800;
-                }
-                a:active {
-                    @apply bg-blue-300;
-                    @apply text-neutral-800;
+                a:hover, a:active {
+                    @apply bg-blue-300 text-neutral-800;
                 }
             }
             @layer utilities {
@@ -53,44 +46,44 @@ const { title } = Astro.props
         </style>
     </head>
     <body>
-        <Snowflake></Snowflake>
-        <div class="flex justify-center">
-            <div class="md:grid md:grid-cols-4 w-[90%] sm:w-[65%] gap-6 h-screen">
-                <!-- desktop navbar -->
-                <div class="hidden md:flex items-center justify-center h-screen">
-                    <div>
-                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/">
-                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800 font-medium">evan whelan</p>
+        <Snowflake />
+        <div class="flex md:hidden flex-col gap-x-8 lg:gap-x-16 w-full justify-center items-center mt-2">
+            <a href="/" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 mt-2">
+                <p class="mobile-only:text-4xl text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">evan whelan</p>
+            </a>
+            <div class="flex gap-x-8 lg:gap-x-16 items-center justify-center h-full mt-2">
+                <a href="/projects" class="group flex hover:bg-neutral-200 active:bg-neutral-200">
+                    <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">projects</p>
+                </a>
+                <a href="/posts" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200">
+                    <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">blog</p>
+                </a>
+                <a href="/interests" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200">
+                    <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">interests</p>
+                </a>
+            </div>
+        </div>
+        <div class="flex sm:ml-[7.5vw]">
+            <div class="hidden w-[20vw] md:block">
+                <div class="md:flex items-center justify-center h-screen">
+                    <div class="mr-4">
+                        <a href="/" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1">
+                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800 font-medium">evan whelan</p>
                         </a>
-                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/projects">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">projects</p>
+                        <a href="/projects" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">projects</p>
                         </a>
-                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/posts">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">blog</p>
+                        <a href="/posts" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">blog</p>
                         </a>
-                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/interests">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">interests</p>
-                        </a>
-                    </div>
-                </div>
-                <!-- mobile navbar -->
-                <div class="flex md:hidden mobile-only:flex-col non-mobile::flex-row gap-x-8 lg:gap-x-16 w-full justify-center items-center mt-2">
-                    <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 mt-2" href="/">
-                        <p class="mobile-only:text-4xl text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">evan whelan</p>
-                    </a>
-                    <div class="flex gap-x-8 lg:gap-x-16 items-center justify-center h-full mt-2">
-                        <a class="group flex hover:bg-neutral-200 active:bg-neutral-200" href="/projects">
-                            <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">projects</p>
-                        </a>
-                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200" href="/posts">
-                            <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">blog</p>
-                        </a>
-                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200" href="/interests">
-                            <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">interests</p>
+                        <a href="/interests" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">interests</p>
                         </a>
                     </div>
                 </div>
-                <div class="w-full md:col-start-2 md:col-span-3 flex items-center md:h-full py-10">
+            </div>
+            <div class="w-screen mx-4 sm:mx-0 sm:w-[45vw] flex justify-center items-center">
+                <div class="w-full flex sm:justify-center sm:ml-4 py-10">
                     <slot />
                 </div>
             </div>

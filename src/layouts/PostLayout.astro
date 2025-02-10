@@ -4,12 +4,12 @@ import "katex/dist/katex.min.css";
 
 const { frontmatter } = Astro.props;
 
-//TODO: add scrollbar to side of blog post
+// TODO: add scrollbar to side of blog post
 ---
 
 <Layout title={`Evan Whelan - ${frontmatter.title}`}>
-    <div class="flex w-full justify-center">
-        <div class="prose prose-base prose-invert py-10 overflow-x-hidden w-full mx-auto max-w-3xl">
+    <div class="flex w-full justify-center items-center">
+        <div class="prose prose-base prose-invert max-w-xs sm:max-w-3xl">
             <h1 class="mb-0">{frontmatter.title}</h1>
             <h4 class="mt-0 mb-8">{frontmatter.date}</h4>
             <slot />

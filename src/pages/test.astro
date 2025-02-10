@@ -1,0 +1,81 @@
+---
+import '@fontsource/mulish'
+import Snowflake from '../components/Snowflake.astro';
+
+interface Props {
+    title: string;
+}
+const { title } = Astro.props 
+---
+
+<html lang="en">
+    <head>
+        <title>{title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <link rel="icon" href="https://avatars.githubusercontent.com/u/41494790?v=4">
+        <style is:global>
+            @tailwind base;
+            @tailwind components;
+            @tailwind utilities;
+
+            @layer base {
+                body {
+                    @apply bg-neutral-800;
+                    @apply text-neutral-200;
+                    @apply font-mulish;
+                }
+                a {
+                    @apply text-blue-300;
+                }
+                a:hover {
+                    @apply bg-blue-300;
+                    @apply text-neutral-800;
+                }
+                a:active {
+                    @apply bg-blue-300;
+                    @apply text-neutral-800;
+                }
+            }
+            @layer utilities {
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .no-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            }
+
+            * {
+                font-variant-ligatures: none;
+            }
+        </style>
+    </head>
+    <body>
+        <Snowflake />
+        <div class="flex items-center ml-[5vw]">
+            <div class="w-[25vw] h-[200vh]">
+                <div class="hidden md:flex items-center justify-center h-screen">
+                    <div>
+                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/">
+                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800 font-medium">evan whelan</p>
+                        </a>
+                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/projects">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">projects</p>
+                        </a>
+                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/posts">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">blog</p>
+                        </a>
+                        <a class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1" href="/interests">
+                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-actve:text-neutral-800">interests</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[40vw] h-[200vh] flex items-center md:h-full py-10">
+                <slot />
+            </div>
+        </div>
+    </body>
+</html>
