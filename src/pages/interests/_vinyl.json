@@ -143,5 +143,10 @@
         "title": "Some Rap Songs",
         "artist": "Earl Sweatshirt",
         "cover": "https://archive.org/download/mbid-bb12aa9f-824c-4c3d-8e6c-5cb1f40b3ca3/mbid-bb12aa9f-824c-4c3d-8e6c-5cb1f40b3ca3-21597302452_thumb250.jpg"
+    },
+    {
+        "title": "Dawn FM",
+        "artist": "The Weeknd",
+        "cover": "https://archive.org/download/mbid-6e97c587-7503-422f-9120-052ea6a1f90d/mbid-6e97c587-7503-422f-9120-052ea6a1f90d-31400393114_thumb250.jpg"
     }
 ]
