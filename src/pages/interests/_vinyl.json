@@ -158,5 +158,15 @@
         "title": "No Love Deep Web",
         "artist": "Death Grips",
         "cover": "https://ia600303.us.archive.org/25/items/Death_Grips_-_NO_LOVE_DEEP_WEB/cover.jpg"
+    },
+    {
+        "title": "ASTROWORLD",
+        "artist": "Travis Scott",
+        "cover": "https://archive.org/download/mbid-82784744-65ed-4f32-b004-ba45cd726509/mbid-82784744-65ed-4f32-b004-ba45cd726509-22387554802_thumb250.jpg"
+    },
+    {
+        "title": "CALL ME IF YOU GET LOST: The Estate Sale",
+        "artist": "Tyler, the Creator",
+        "cover": "https://archive.org/download/mbid-2496ce2d-8f8a-45b7-866a-2a622c44fadb/mbid-2496ce2d-8f8a-45b7-866a-2a622c44fadb-41122568056_thumb250.jpg"
     }
 ]
