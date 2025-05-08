@@ -1,26 +1,25 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { siRss } from "simple-icons";
+import RSSIcon from "simple-icons/icons/rss.svg"
+import Layout from "../layouts/Layout.astro"
 
 const posts = await Astro.glob("./posts/*.mdx")
 ---
 
-<Layout title="Evan Whelan - Blog Posts">
-    <div class="flex w-full">
-        <div>
-            <div class="flex items-center">
-                <p class="text-3xl font-medium ml-1">My Blog Posts</p>
-                <a class="group flex items-center hover:bg-blue-300 active:bg-blue-300 ml-2 p-1" href="/posts/rss.xml">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" class="fill-blue-300 group-hover:fill-neutral-800 group-active:fill-neutral-800">
-                        <path d={siRss.path} />
-                    </svg>
-                </a>
-            </div>
-            {posts.sort((a, b) => b.frontmatter.pubDate.localeCompare(a.frontmatter.pubDate)).map(post =>
-                <a class="group flex items-center my-2 mobile-only:w-full p-0.5" href={post.url}>
-                    <p class="text-xl">{post.frontmatter.title} - {post.frontmatter.pubDate}</p>
-                </a>
-            )}
-        </div>
+<Layout title="Blog Posts">
+    <div class="flex items-center justify-center md:justify-start">
+        <p class="text-4xl mb-2">
+            My Blog Posts
+        </p>
+        <a class="hover:bg-blue-300 active:bg-blue-300 ml-2 p-1" href="/posts/rss.xml">
+            <RSSIcon class="h-6 w-6" />
+        </a>
+    </div>
+
+    <div class="flex flex-col">
+        {posts.sort((a, b) => b.frontmatter.pubDate.localeCompare(a.frontmatter.pubDate)).map(post =>
+            <a class=" my-1 p-0.5 w-fit text-xl" href={post.url}>
+                {post.frontmatter.title} - {post.frontmatter.pubDate}
+            </a>
+        )}
     </div>
 </Layout>

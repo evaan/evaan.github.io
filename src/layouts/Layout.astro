@@ -1,92 +1,48 @@
 ---
-import '@fontsource/mulish'
-import Snowflake from '../components/Snowflake.astro';
+import "@fontsource/mulish";
+import Snowflake from "../components/Snowflake.astro";
+
+import "../styles/global.css";
 
 interface Props {
-    title: string;
+  title: string;
 }
-const { title } = Astro.props 
+const { title } = Astro.props;
 ---
 
 <html lang="en">
-    <head>
-        <title>{title}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charset="utf-8" />
-        <link rel="icon" href="https://avatars.githubusercontent.com/u/41494790?v=4">
-        <style is:global>
-            @tailwind base;
-            @tailwind components;
-            @tailwind utilities;
-
-            @layer base {
-                body {
-                    @apply bg-neutral-800 text-neutral-200 font-mulish;
-                }
-                a {
-                    @apply text-blue-300;
-                }
-                a:hover, a:active {
-                    @apply bg-blue-300 text-neutral-800;
-                }
-            }
-            @layer utilities {
-                .no-scrollbar::-webkit-scrollbar {
-                    display: none;
-                }
-                .no-scrollbar {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            }
-
-            * {
-                font-variant-ligatures: none;
-            }
-        </style>
-    </head>
-    <body>
-        <Snowflake />
-        <div class="flex md:hidden flex-col gap-x-8 lg:gap-x-16 w-full justify-center items-center mt-2">
-            <a href="/" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 mt-2">
-                <p class="mobile-only:text-4xl text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">evan whelan</p>
-            </a>
-            <div class="flex gap-x-8 lg:gap-x-16 items-center justify-center h-full mt-2">
-                <a href="/projects" class="group flex hover:bg-neutral-200 active:bg-neutral-200">
-                    <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">projects</p>
-                </a>
-                <a href="/posts" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200">
-                    <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">blog</p>
-                </a>
-                <a href="/interests" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200">
-                    <p class="text-2xl text-center text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">interests</p>
-                </a>
-            </div>
+  <head>
+    <title>Evan Whelan{title == "" ? "" : " - " + title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/41494790?v=4">
+    <!-- TODO: meta tags for embed and maybe seo if thats a thing -->
+  </head>
+  <body class="md:flex min-h-screen justify-center bg-neutral-800 text-neutral-200 font-mulish overflow-x-hidden px-2">
+    <Snowflake />
+    <!-- TODO: mobile navbar -->
+    <!-- TODO: make this stay in the middle of the screen -->
+    <div class="block md:hidden mt-2 text-center *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200">
+      <a href="/" class="text-3xl p-1">Evan Whelan</a>
+      <div class="flex justify-evenly gap-1 *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200">
+        <a href="/projects" class="text-xl w-full p-1">Projects</a>
+        <a href="/posts" class="text-xl w-full p-1">Blog</a>
+        <a href="/hobbies" class="text-xl w-full p-1">Hobbies</a>
+      </div>
+    </div>
+    <div class="md:grid grid-cols-17 w-full max-w-[92rem] gap-8">
+      <div class="col-span-4 h-screen hidden md:flex flex-col justify-center *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200">
+        <a href="/" class="text-5xl p-1">Evan Whelan</a>
+        <a href="/projects" class="text-2xl w-full p-1">Projects</a>
+        <a href="/posts" class="text-2xl w-full p-1">Blog</a>
+        <a href="/hobbies" class="text-2xl w-full p-1">Hobbies</a>
+      </div>
+      <div class="col-span-9 flex w-full items-center text-center md:text-left py-5">
+        <div class="w-full">
+          <slot />
         </div>
-        <div class="flex sm:ml-[7.5vw]">
-            <div class="hidden w-[20vw] md:block">
-                <div class="md:flex items-center justify-center h-screen">
-                    <div class="mr-4">
-                        <a href="/" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1">
-                            <p class="text-6xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800 font-medium">evan whelan</p>
-                        </a>
-                        <a href="/projects" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">projects</p>
-                        </a>
-                        <a href="/posts" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">blog</p>
-                        </a>
-                        <a href="/interests" class="group flex items-center hover:bg-neutral-200 active:bg-neutral-200 p-1">
-                            <p class="text-3xl text-neutral-200 group-hover:text-neutral-800 group-active:text-neutral-800">interests</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="mx-4 sm:mx-0 md:w-[45vw] max-w-[90vw] flex justify-center items-center">
-                <div class="w-full flex sm:justify-center sm:ml-4 py-10">
-                    <slot />
-                </div>
-            </div>
-        </div>
-    </body>
+      </div>
+      <div class="hidden md:block col-span-4" />
+    </div>
+  </body>
 </html>

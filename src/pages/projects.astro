@@ -1,90 +1,90 @@
 ---
-import { siGo, siReact, siDocker, siPostgresql, siRos, siCplusplus, siAstro, siHomeassistant, siC, siNixos, siLinux } from "simple-icons";
 import Layout from "../layouts/Layout.astro";
 import Project from "../components/Project.astro";
 import Link from "../components/Link.astro";
+
+import GoIcon from "simple-icons/icons/go.svg";
+import ReactIcon from "simple-icons/icons/react.svg";
+import DockerIcon from "simple-icons/icons/docker.svg";
+import PostgresIcon from "simple-icons/icons/postgresql.svg";
+import RedisIcon from "simple-icons/icons/redis.svg";
+import CPlusPlusIcon from "simple-icons/icons/cplusplus.svg";
+import CIcon from "simple-icons/icons/c.svg";
+import AstroIcon from "simple-icons/icons/astro.svg";
+import ROSIcon from "simple-icons/icons/ros.svg";
+import TypeScriptIcon from "simple-icons/icons/typescript.svg";
+import NixIcon from "simple-icons/icons/nixos.svg";
+import DebianIcon from "simple-icons/icons/debian.svg";
+import LinuxIcon from "simple-icons/icons/linux.svg";
 ---
 
-<style>
-    svg {
-        @apply fill-neutral-200
-    }
-</style>
-<Layout title="Evan Whelan - Projects">
-    <div>
-        <p class="text-3xl font-medium mb-4">My Current Projects</p>
-        <Project name="Claret">
-            <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siGo.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class=""><path d={siPostgresql.path}/></svg>        
-            </Fragment>
-            <Fragment slot="description">
-                Claret is a schedule-building tool tailored for Memorial University students, providing an easy-to-use solution for picking courses. It houses several extra features, such as calendar integration and easy schedule sharing.
-            </Fragment>
-            <Fragment slot="links">
-                <Link label="ClaretForMUN.com" link="https://claretformun.com" />
-                <Link label="evaan/Claret" link="https://github.com/evaan/Claret" github />
-            </Fragment>
-        </Project>
-        <Project name="Eastern Edge Robotics">
-            <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siCplusplus.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siC.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siRos.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siAstro.path}/></svg>
-            </Fragment>
-            <Fragment slot="description">
-                I am currently the Software Co-Lead for Eastern Edge Robotics, where I contribute to the development of software (both frontend and backend) and firmware for our ROV and other non-ROV devices.
-                Last year, we competed in Kingsport, Tennessee (our codebase can be found <a href="https://github.com/easternedgerobotics/software_2024" target="_blank">here</a>).
-                This year, I am working on the firmware for the Vertical Profiling Float, the microcontroller firmware for our ROV, and a new control UI written in C++.
-            </Fragment>
-            <Fragment slot="links">
-                <Link label="EasternEdgeRobotics.com" link="https://easternedgerobotics.com" />
-                <Link label="EER/Software_2025" link="https://github.com/easternedgerobotics/software_2025" github/>
-            </Fragment>
-        </Project>
-        <Project name="Homelab">
-            <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siNixos.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siLinux.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siDocker.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siHomeassistant.path}/></svg>
-            </Fragment>
-            <Fragment slot="description">
-                A homelab I run as a hobby, which runs NixOS. The homelab runs many services ranging from media to games to smart home devices.
-            </Fragment>
-            <Fragment slot="links">
-                <Link label="evaan/homelab" link="https://github.com/evaan/homelab" github/>
-            </Fragment>
-        </Project>
-        <Project name="invengory">
-            <Fragment slot="icons">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siGo.path}/></svg>
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" class="mr-1"><path d={siReact.path}/></svg> 
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px"><path d={siPostgresql.path}/></svg>        
-            </Fragment>
-            <Fragment slot="description">
-                invengory is a project initially designed for Eastern Edge Robotics. It aims to deliver a robust, simple, open-source inventory management system.
-            </Fragment>
-            <Fragment slot="links">
-                <Link label="evaan/invengory" link="https://github.com/evaan/invengory" github />
-            </Fragment>
-        </Project>
-        <p class="text-2xl font-medium mt-4">My Other Projects</p>
-        <p class="text-md"><a href="https://github.com/evaan/frostburn" target="_blank">Frostburn</a> - A utility mod for Minecraft 1.17.1, built using the Fabric modding API.</p>
-        <p class="text-md"><a href="https://github.com/evaan/huskyexplorer2023" target="_blank">Husky Explorer 2023</a> - Code for the Husky Explorer, which competed in the MATE ROV World Championship in Longmont, CO, in 2023.</p>
-        <p class="text-md"><a href="https://www.cs.mun.ca/~epwhelan/" target="_blank">MUN Website</a> - 🔥</p>
+<Layout title="Projects">
+    <p class="text-4xl">Projects</p>
+    <div class="mb-1">
+        <p class="text-lg md:inline">You can find a full list of my projects <a href="https://github.com/evaan" target="_blank">on my GitHub</a>.</p>
+        <p class="text-lg hidden md:inline">Hover over each icon to reveal its name.</p>
     </div>
+    <Project name="Claret">
+        <Fragment slot="icons">
+            <GoIcon />
+            <ReactIcon />
+            <TypeScriptIcon />
+            <DockerIcon />
+            <PostgresIcon />
+            <RedisIcon /> 
+        </Fragment>
+        <Fragment slot="description">
+            Claret is a schedule-building tool tailored for Memorial University students,
+            providing an easy-to-use solution for picking courses. It houses several extra features,
+            such as calendar integration and easy schedule sharing. 
+        </Fragment>
+        <Fragment slot="links">
+            <Link url="https://github.com/evaan/Claret" label="evaan/Claret" github />
+            <Link url="https://claretformun.com" label="ClaretForMUN.com" />
+        </Fragment>
+    </Project>
+    <Project name="Eastern Edge Robotics">
+        <Fragment slot="icons">
+            <CPlusPlusIcon />
+            <ROSIcon />
+            <DockerIcon />
+            <CIcon />
+            <ReactIcon />
+            <AstroIcon />
+        </Fragment>
+        <Fragment slot="description">
+            This year, I developed custom firmware for a Raspberry Pi Pico to control thrusters and tooling.
+            A custom GUI was written using C++ and <a href="https://github.com/ocornut/imgui" target="_blank">ImGui</a>,
+            which allows for easy driving and controls, with communications using ROS 2.<br/>
+            I also contributed to last year's software, which used React GUI and ROS 2.<br/>
+            Alongside the ROV, I have worked on Jonesy, the
+            <a href="https://20693798.fs1.hubspotusercontent-na1.net/hubfs/20693798/2025%20MATE%20Floats%20Preview%20Mission_EXPLORER_FINAL.pdf" target="_blank">vertical profiler</a>,
+            which competed last year, and a modified version will return this year.<br/>
+            I have also helped recreate the Eastern Edge website using Astro.<br/>
+        </Fragment>
+        <Fragment slot="links">
+            <Link url="https://github.com/EasternEdgeRobotics/Software_2025" label="EER/Software_2025" github />
+            <Link url="https://github.com/evaan/Jonesy" label="evaan/Jonesy" github />
+            <Link url="https://easternedgerobotics.com" label="EasternEdgeRobotics.com" />
+        </Fragment>
+    </Project>
+    <Project name="Homelab">
+        <Fragment slot="icons">
+            <NixIcon />
+            <DebianIcon />
+            <DockerIcon />
+            <LinuxIcon />
+        </Fragment>
+        <Fragment slot="description">
+            I have built a homelab, primarily running NixOS, that manages a range services, including media and game servers, as well as backups hosting.
+        </Fragment>
+        <Fragment slot="links">
+            <Link url="https://github.com/evaan/homelab" label="evaan/homelab" github />
+        </Fragment>
+    </Project>
+    <p class="text-3xl">Other Projects</p>
+    <p class="text-md"><a href="https://github.com/evaan/Frostburn" target="_blank">Frostburn</a> - A utility mod for Minecraft 1.17.1, built using the Fabric modding API.</p>
+    <p class="text-md"><a href="https://github.com/evaan/HuskyExplorer2023" target="_blank">
+        Husky Explorer (2023)</a> - The software for our high school team's ROV at the 2023 MATE World Championship in Longmont, Colorado (Ranger class).
+    </p>
 </Layout>
-<script>
-    import { createIcons, Link } from "lucide";
-    createIcons({
-        icons: {
-            Link
-        }
-    })
-</script>

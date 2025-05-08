@@ -1,16 +1,15 @@
+// @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
 
-import mdx from "@astrojs/mdx";
+import tailwindcss from '@tailwindcss/vite';
 
-import rehypeKatex from 'rehype-katex'
-import remarkMath from 'remark-math'
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx()],
-  markdown: {
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex]
-  }
+  vite: {
+    plugins: [tailwindcss()]
+  },
+
+  integrations: [mdx()]
 });

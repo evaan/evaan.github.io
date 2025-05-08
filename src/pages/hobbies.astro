@@ -1,0 +1,15 @@
+---
+import RSSIcon from "simple-icons/icons/rss.svg"
+import Layout from "../layouts/Layout.astro"
+
+const posts = await Astro.glob("./posts/*.mdx")
+---
+
+<Layout title="Hobbies">
+    <p class="text-4xl mb-2">
+        My Hobbies
+    </p>
+    <a class="text-xl md:justify-start items-center my-1 p-0.5 w-fit" href="/hobbies/vinyl">
+        My Record Collection
+    </a>
+</Layout>

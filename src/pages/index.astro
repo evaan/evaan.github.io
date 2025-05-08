@@ -1,103 +1,45 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import { siDiscord, siGithub, siLinkedin } from "simple-icons";
+import Layout from "../layouts/Layout.astro";
+
+import CodeXMLIcon from "lucide-static/icons/code-xml.svg";
+import HardDriveIcon from "lucide-static/icons/hard-drive.svg";
+import GlobeIcon from "lucide-static/icons/globe.svg";
+
+import GitHubIcon from "simple-icons/icons/github.svg";
+import LinkedInIcon from "simple-icons/icons/linkedin.svg";
+import DiscordIcon from "simple-icons/icons/discord.svg";
 ---
 
-<Layout title="Evan Whelan">
-    <div>
-        <p class="text-3xl mb-1 font-medium">About Me</p>
-        <p class="text-xl indent-4 mb-2">
-            Hi, I'm Evan, a Computer Engineering student at <a href="https://mun.ca" target="_blank">Memorial University of Newfoundland</a>,
-            currently completing a work term as a Systems Administration Intern at <a href="https://ace-net.ca" target="_blank">ACENET</a>.
-            Additionally, I am the Software Co-Lead for <a href="https://easternedgerobotics.com" target="_blank">Eastern Edge Robotics</a>,
-            a team competing in the <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a>. This June, Eastern Edge is travelling to Alpena, Michigan!
-        </p>
-        <p class="text-xl indent-4 mb-2">In my spare time, I like to work on projects such as <a href="https://claretformun.com" target="_blank">Claret</a>,
-        an easy-to-use schedule builder for Memorial University students. I love to hear suggestions regarding Claret, so if you have one be sure to let me know!
-        I also enjoy collecting vinyl and have published <a href="/interests/vinyl">a list the of records I own</a>. Additionally, I manage a homelab,
-        which I've recently migrated to NixOS. I've written a blog post about my experience, which you can find <a href="/posts/nixmigration">here</a>.</p>
-        <p class="text-xl mb-4 indent-4">You can explore more of my work <a href="/projects">here</a>.</p>
-        <p class="text-3xl mb-1 font-medium">Skills</p>
-        <div class="mb-4">
-            <div class="flex items-center mb-2">
-                <i data-lucide="code-2" />
-                <p class="text-xl ml-2">Go, TypeScript, C++, C, Python, SQL, Java</p>
-            </div>
-            <div class="flex items-center mb-2">
-                <i data-lucide="globe-2" />
-                <p class="text-xl ml-2">React, HTML, CSS, JavaScript</p>
-            </div>
-            <div class="flex items-center mb-2">
-                <i data-lucide="hard-drive" />
-                <p class="text-xl ml-2">Linux, Docker, Nix, ROS 2</p>
-            </div>
-        </div>
-        <p class="text-3xl mb-1 font-medium">Contact Me</p>
-        <div class="flex mb-2">
-            <a class="group flex items-center p-1" href="https://github.com/evaan" target="_blank">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="mr-0.5 fill-blue-300  group-hover:fill-neutral-800"><path d={siGithub.path}/></svg> 
-                <p class="text-2xl leading-none">/evaan</p>
-            </a>
-        </div>
-        <div class="flex mb-2">
-            <a class="group flex items-center p-1" href="https://linkedin.com/in/evan-whelan-/" target="_blank">
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="mr-0.5 fill-blue-300  group-hover:fill-neutral-800"><path d={siLinkedin.path}/></svg> 
-                <p class="text-2xl leading-none">/evan-whelan-</p>
-            </a>
-        </div>
-        <div class="flex items-center">
-            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" class="fill-neutral-200 mr-0.5"><path d={siDiscord.path}/></svg> 
-            <p class="text-2xl leading-none">/evaandev</p>
-        </div>
+<Layout title="">
+  <p class="text-4xl mb-2">About Me</p>
+  <p class="text-xl indent-4 mb-2">
+    Hi, I'm Evan, a Computer Engineering student at <a href="https://mun.ca" target="_blank">Memorial University of Newfoundland</a>,
+    I am the Software Co-Lead for <a href="https://easternedgerobotics.com" target="_blank">Eastern Edge Robotics</a>,
+    a team competing in the <a href="https://materovcompetition.org/" target="_blank">MATE ROV Competition</a>. This June, Eastern Edge is travelling to Alpena, Michigan!
+  </p>
+  <p class="text-xl indent-4 mb-2">In my spare time, I like to work on projects such as <a href="https://claretformun.com" target="_blank">Claret</a>,
+  an easy-to-use schedule builder for Memorial University students. I love to hear suggestions regarding Claret, so if you have one be sure to let me know!
+  I also enjoy collecting vinyl and have published <a href="/hobbies/vinyl">a list the of records I own</a>. Additionally, I manage a homelab,
+  which I've recently migrated to NixOS. I've written a blog post about my experience, which you can find <a href="/posts/nixmigration">here</a>.</p>
+  <p class="text-xl mb-4 indent-4">You can explore more of my work <a href="/projects">here</a>.</p>  <p class="text-4xl mb-2">Skills</p>
+  <div class="w-full text-left">
+    <div class="flex items-center mb-2">
+      <CodeXMLIcon class="h-6 w-6" />
+      <p class="text-lg ml-2">Go, Rust, TypeScript, C++, C, SQL, Java</p>
     </div>
-    <script>
-        import { createIcons, Code2, Globe2, HardDrive } from 'lucide';
-        createIcons({
-            icons: {
-                Code2,
-                Globe2,
-                HardDrive
-            }
-        });
-    </script>
-    <!-- <script>
-        let hidden = true;
-        let spotify = false;
-        let name = "";
-        let details = "";
-        let state = "";
-        let image = "";
-
-        await fetch("https://api.lanyard.rest/v1/users/790703402388684830").then(response => response.json()).then(data => {
-            if (data["data"]["activities"].length > 0) {
-                const activities = data["data"]["activities"].filter((status: { [x: string]: string | string[]; }) => status["id"] !== "custom" && !status["id"].includes("spotify")).concat(data["data"]["activities"].filter((status: { [x: string]: string | string[]; }) => status["id"].includes("spotify")));
-                activities.forEach((element: { [x: string]: { [x: string]: any; }; }) => {
-                    if (!hidden) return;
-                    hidden = false;
-                    if (element["id"].includes("spotify")) {
-                        spotify = true;
-                        image = data["data"]["spotify"]["album_art_url"];
-                        name = data["data"]["spotify"]["song"];
-                        details = `by ${data["data"]["spotify"]["artist"]}`;
-                        state = `on ${data["data"]["spotify"]["album"]}`;
-
-                    } else {
-                        name = `${element["name"]}`
-                        if (element["details"] !== undefined) details = `${element["details"]}`;
-                        if (element["state"] !== undefined) state = `${element["state"]}`;
-                        if (element["assets"]["large_image"] !== undefined) image = `https://cdn.discordapp.com/app-assets/${element["application_id"]}/${element["assets"]["large_image"]}.png`;
-                    }
-                });
-            }
-        });
-
-        (document.getElementById("disc-image")! as HTMLImageElement).src = image;
-        document.getElementById("disc-image")!.style.display = image.length == 0 ? "flex" : "block";
-        document.getElementById("disc-label")!.style.display = hidden ? "none" : "flex";
-        document.getElementById("disc-name")!.textContent = name;
-        document.getElementById("disc-details")!.textContent = details;
-        document.getElementById("disc-state")!.textContent = state;
-        document.getElementById("disc-spotify")!.style.display = spotify ? "flex" : "none";
-        document.getElementById("disc")!.style.display = hidden ? "none" : "flex";
-    </script> -->
+    <div class="flex items-center mb-2">
+      <HardDriveIcon class="h-6 w-6" />
+      <p class="text-lg ml-2">Linux, Docker, Nix, Puppet, ROS 2</p>
+    </div>
+    <div class="flex items-center mb-2">
+      <GlobeIcon class="h-6 w-6" />
+      <p class="text-lg ml-2">React, Astro, HTML, CSS, JavaScript</p>
+    </div>
+  </div>
+  <p class="text-4xl mb-2">Contact Me</p>
+  <div class="fill-neutral-200 *:text-lg *:mb-1 *:flex *:items-center *:w-fit *:p-0.5 flex flex-col items-center sm:items-start">
+    <a href="https://github.com/evaan"><GitHubIcon class="mr-0.5 h-6 w-6" />/evaan</a>
+    <a href="https://linkedin.com/in/evan-whelan-/"><LinkedInIcon class="mr-0.5 h-6 w-6" />/evan-whelan-</a>
+    <p><DiscordIcon class="mr-0.5 h-6 w-6" />/evaandev</p>
+  </div>
 </Layout>

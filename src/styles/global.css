@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-mulish: "Mulish";
+}
+
+@layer base {
+  a {
+    @apply text-blue-300 bg-neutral-800;
+    @apply underline;
+    &:hover, &:active {
+      @apply text-neutral-800 bg-blue-300;
+    }
+  }
+  
+  a svg {
+    @apply fill-current;
+  }
+}
