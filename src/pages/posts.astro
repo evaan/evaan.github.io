@@ -16,7 +16,7 @@ const posts = await Astro.glob("./posts/*.mdx")
     </div>
 
     <div class="flex flex-col">
-        {posts.sort((a, b) => b.frontmatter.pubDate.localeCompare(a.frontmatter.pubDate)).map(post =>
+        {posts.sort((a: { frontmatter: { pubDate: any } }, b: { frontmatter: { pubDate: string } }) => b.frontmatter.pubDate.localeCompare(a.frontmatter.pubDate)).map((post: { url: string | URL | null | undefined; frontmatter: { title: unknown; pubDate: unknown } }) =>
             <a class=" my-1 p-0.5 w-fit text-xl" href={post.url}>
                 {post.frontmatter.title} - {post.frontmatter.pubDate}
             </a>
