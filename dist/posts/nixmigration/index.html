@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"> <head><title>Evan Whelan - Migrating my homelab to Nix</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8"><link rel="icon" href="https://avatars.githubusercontent.com/u/41494790?v=4"><!-- TODO: meta tags for embed and maybe seo if thats a thing --><link rel="stylesheet" href="/_astro/mate2024.BNSOUIb3.css">
+<link rel="stylesheet" href="/_astro/mate2024.COXD5gRV.css"></head> <body class="md:flex min-h-screen justify-center bg-neutral-800 text-neutral-200 font-mulish overflow-x-hidden px-2"> <script type="module">class t extends HTMLElement{static random(l,i){return l+Math.floor(Math.random()*(i-l)+1)}static attrs={count:"count",mode:"mode",text:"text"};generateCss(l,i){let n=[];n.push(`
+  :host([mode="element"]) {
+      display: block;
+      position: relative;
+      overflow: hidden;
+  }
+  :host([mode="page"]) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+  }
+  :host([mode="page"]),
+  :host([mode="element"]) > * {
+      pointer-events: none;
+  }
+  :host([mode="element"]) ::slotted(*) {
+      pointer-events: all;
+  }
+  * {
+      position: absolute;
+  }
+  :host([text]) * {
+      font-size: var(--snow-fall-size, 1em);
+  }
+  :host(:not([text])) * {
+      width: var(--snow-fall-size, 10px);
+      height: var(--snow-fall-size, 10px);
+      background: var(--snow-fall-color, rgba(255,255,255,.5));
+      border-radius: 50%;
+  }
+  `);let e={width:100,height:100},s={x:"vw",y:"vh"};l==="element"&&(e={width:this.firstElementChild.clientWidth,height:this.firstElementChild.clientHeight},s={x:"px",y:"px"});for(let o=1;o<=i;o++){let a=t.random(1,100)*e.width/100,h=t.random(-10,10)*e.width/100,r=Math.round(t.random(30,100)),d=r*e.height/100,c=e.height,m=t.random(1,1e4)*1e-4,f=t.random(10,30),p=t.random(0,30)*-1;n.push(`
+  :nth-child(${o}) {
+      opacity: ${t.random(0,1e3)*.001};
+      transform: translate(${a}${s.x}, -10px) scale(${m});
+      animation: fall-${o} ${f}s ${p}s linear infinite;
+  }
+  
+  @keyframes fall-${o} {
+      ${r}% {
+          transform: translate(${a+h}${s.x}, ${d}${s.y}) scale(${m});
+      }
+  
+      to {
+          transform: translate(${a+h/2}${s.x}, ${c}${s.y}) scale(${m});
+      }
+  }`)}return n.join(`
+`)}connectedCallback(){if(this.shadowRoot||!("replaceSync"in CSSStyleSheet.prototype)||new Date().getMonth()!==11)return;let n=parseInt(this.getAttribute(t.attrs.count))||100,e;this.hasAttribute(t.attrs.mode)?e=this.getAttribute(t.attrs.mode):(e=this.firstElementChild?"element":"page",this.setAttribute(t.attrs.mode,e));let s=new CSSStyleSheet;s.replaceSync(this.generateCss(e,n));let o=this.attachShadow({mode:"open"});o.adoptedStyleSheets=[s];let a=document.createElement("div"),h=this.getAttribute(t.attrs.text);a.innerText=h||"";for(let r=0,d=n;r<d;r++)o.appendChild(a.cloneNode(!0));o.appendChild(document.createElement("slot"))}}customElements.define("snow-fall",t);</script> <snow-fall></snow-fall> <!-- TODO: mobile navbar --> <!-- TODO: make this stay in the middle of the screen --> <div class="block md:hidden mt-2 text-center *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/" class="text-3xl p-1">Evan Whelan</a> <div class="flex justify-evenly gap-1 *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/projects" class="text-xl w-full p-1">Projects</a> <a href="/posts" class="text-xl w-full p-1">Blog</a> <a href="/hobbies" class="text-xl w-full p-1">Hobbies</a> </div> </div> <div class="md:grid grid-cols-17 w-full max-w-[92rem] gap-8"> <div class="col-span-4 h-screen hidden md:flex flex-col justify-center *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/" class="text-5xl p-1">Evan Whelan</a> <a href="/projects" class="text-2xl w-full p-1">Projects</a> <a href="/posts" class="text-2xl w-full p-1">Blog</a> <a href="/hobbies" class="text-2xl w-full p-1">Hobbies</a> </div> <div class="col-span-9 flex w-full items-center text-center md:text-left py-5"> <div class="w-full">  <div class="flex w-full justify-center items-center"> <div class="prose prose-base prose-invert max-w-xs sm:max-w-3xl"> <h1 class="text-4xl font-bold">Migrating my homelab to Nix</h1> <h4 class="mb-8"></h4> <div class="px-1"> <div class="flex items-center justify-center"> <img src="/_astro/nixos-white.DxWencpa_xY6qd.webp" alt width="384" height="121" loading="lazy" decoding="async" class="mb-0"> </div> <p class="text-center mt-0"></p> </div>
+<p>Since about 2016-17, I have been learning Linux, and around Late 2019-Early 2020 I started my own “homelab”, consisting of a Raspberry Pi 3 running Raspbian.</p>
+<p>My method of deploying services at this point consisted of installing a package through a repo, and enabling a systemd service. This worked, but cleaning up configs, and running multiple instances isn’t particilarly ideal.</p>
+<p>I knew about Docker, but seeing big commands (which in hindsight were pretty simple), was pretty intimidating so I never decided to learn it. That was, until a few years ago when I started learning Docker Compose, which made
+me realize that Docker wasnt nearly as complicated as I thought it was.</p>
+<p>Over the years I ended up learning Docker, with my homelab increasing by a few laptops, all running Portainer so I could easily manage containers in each machine.<br/>
+In 2022, I purchased a full desktop, housing an i3-10100, and a GTX 960. After a while, I ended up installing Proxmox, with TrueNAS, and Debian.</p>
+<p>This is basically how it ran until late last year, when I heard about using NixOS for a homelab. I had learned about NixOS a while ago, but the declarative aspect for desktop seemed a little intimidating.<br/>
+However, this steep learning curve did seem interesting, and allows for a modular homelab setup, which lets me share modules between devices.</p>
+<h2 id="initial-struggles">Initial Struggles</h2>
+<p>NixOS is a pretty steep learning curve, and declaring every aspect of your operating system is a pretty daunting process, but it ends up making life so much easier when it’s done. Setting up Home Manager
+seemed to be more work than it should’ve been, but it was a set and forget kind of thing, and it applies to all of my systems so it wasn’t too bad overall.</p>
+<h3 id="the-qbittorrent-kerfuffle">The qBittorrent Kerfuffle</h3>
+<p>Initially, I wanted to move away from Docker. I’m still not sure why I wanted to do this, as it just made everything harder, especially dealing with tunnelling my torrent client traffic through a VPN.</p>
+<p>I spent so much time looking into alternatives, such as <a href="https://nixos.wiki/wiki/NixOS_Containers">NixOS Containers</a>. At this point I realized, why am I doing everything other than just using Docker?</p>
+<h2 id="switching-back-to-docker">Switching (back) to Docker</h2>
+<p>After remembering that Docker is the best piece of software in existence, I switched back, using NixOS’ OCI Containers, it allowed me to easily declare every container I want… just like docker compose, with extra steps.
+But where’s the fun in that? A homelab requires constant upkeep and tinkering, that’s what makes it a hobby!</p>
+<p>Setting up a docker container using Nix is not much more than this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="nix"><code><span class="line"><span style="color:#E1E4E8">{ lib</span><span style="color:#F97583">,</span><span style="color:#F97583"> ...</span><span style="color:#E1E4E8">}: {</span></span>
+<span class="line"><span style="color:#B392F0">  imports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [ </span><span style="color:#9ECBFF">../misc/gluetun.nix</span><span style="color:#E1E4E8"> ];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  virtualisation</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">oci-containers</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">containers</span><span style="color:#E1E4E8">.</span><span style="color:#9ECBFF">&quot;qbittorrent&quot;</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    image</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;docker.io/linuxserver/qbittorrent:latest&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">    autoStart</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">    dependsOn</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [ </span><span style="color:#9ECBFF">&quot;gluetun&quot;</span><span style="color:#E1E4E8"> ];</span></span>
+<span class="line"><span style="color:#B392F0">    extraOptions</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#9ECBFF">      &quot;--network=container:gluetun&quot;</span></span>
+<span class="line"><span style="color:#9ECBFF">      &quot;--memory=4g&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">    ];</span></span>
+<span class="line"><span style="color:#B392F0">    environment</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">      PUID</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;1000&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">      PGID</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;1000&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">      WEBUI_PORT</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;8080&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">      TORRENTING_PORT</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;6881&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">      DOCKER_MODS</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;ghcr.io/vuetorrent/vuetorrent-lsio-mod:latest&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#B392F0">    volumes</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#9ECBFF">      &quot;qbittorrent-config:/config&quot;</span></span>
+<span class="line"><span style="color:#9ECBFF">      &quot;/mnt/storage:/media&quot;</span></span>
+<span class="line"><span style="color:#9ECBFF">      &quot;/etc/localtime:/etc/localtime:ro&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">    ];</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>The code above is my qbittorrent.nix file, which does nothing crazy. It imports gluetun.nix, if it isn’t imported before, as qBit and Prowlarr both depend on it.</p>
+<p>If you’re ever unsure about what option you may need to set something as (for example, setting the network to contianer:gluetun), the sacret texts of <a href="https://search.nixos.org/options">NixOS Options</a> are there for just that.</p>
+<h2 id="secrets-management">Secrets Management</h2>
+<p>If you’re uploading your OS’ config, you’ll likely have some strings you don’t want public (private keys, passwords, etc.), and you’ll want to use a secrets manager to encrypt these if you decide to upload this your flake to the internet.<br/>
+The video below is an amazing 3-part guide on how to setup secrets using <a href="https://github.com/Mic92/sops-nix">sops-nix</a>, and made it super easy to setup:</p>
+<div class="flex w-full justify-center"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6EMNHDOY-wo?si=xyA6xu8-ebLbjYmt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<h2 id="i-hate-nvidia-andor-dont-know-how-to-configure-plex">I hate NVIDIA (and/or don’t know how to configure Plex)</h2>
+<p>Every service was working pretty well, basically on par with how it was before. Except for Plex, as my server has an GTX 960 as mentioned previously, I need to use the <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html">NVIDIA Container Toolkit</a> in order for
+containers to have access to the GPU. Plex doesn’t particularly <em>need</em> this in order to operate, although it allows for more transcodes to happen at once vs. transcoding using my CPU.</p>
+<p>After enabling NVIDIA in Docker (which for some reason is deprecated, and the replacement doesn’t work?) the container has access to the gpu with nvidia-smi, and Plex sees the GPU!
+This is progress, but unfortunately Plex still refuses to use the GPU. And <em><strong>finally</strong></em>, after months of searching at this point, I found <a href="https://forums.plex.tv/t/preferred-hw-transcoder-linux/593507/11">this thread</a>, which ended up solving the issue!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I probably forgot more issues I had, but the repo is <a href="https://github.com/evaan/homelab">here</a> for anyone interested in having a look.</p>
+<p>I’ll probably work on this for the rest of time so it’ll be always changing, I am currently working on implementing a <a href="https://github.com/tModLoader/tModLoader">tModLoader</a> server using Nix.</p>
+<p>Unlike <a href="https://blog.pirated.tech/posts/servarr/">Keenan’s introduction to homelabbing</a> I think that avoiding overcomplicating is for nerds and removes the whole fun of troubleshooting for weeks.</p> </div> </div>  </div> </div> <div class="hidden md:block col-span-4"></div> </div> </body></html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"> <head><title>Evan Whelan - Hobbies</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8"><link rel="icon" href="https://avatars.githubusercontent.com/u/41494790?v=4"><!-- TODO: meta tags for embed and maybe seo if thats a thing --><link rel="stylesheet" href="/_astro/mate2024.BNSOUIb3.css">
+<link rel="stylesheet" href="/_astro/mate2024.COXD5gRV.css"></head> <body class="md:flex min-h-screen justify-center bg-neutral-800 text-neutral-200 font-mulish overflow-x-hidden px-2"> <script type="module">class t extends HTMLElement{static random(l,i){return l+Math.floor(Math.random()*(i-l)+1)}static attrs={count:"count",mode:"mode",text:"text"};generateCss(l,i){let n=[];n.push(`
+  :host([mode="element"]) {
+      display: block;
+      position: relative;
+      overflow: hidden;
+  }
+  :host([mode="page"]) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+  }
+  :host([mode="page"]),
+  :host([mode="element"]) > * {
+      pointer-events: none;
+  }
+  :host([mode="element"]) ::slotted(*) {
+      pointer-events: all;
+  }
+  * {
+      position: absolute;
+  }
+  :host([text]) * {
+      font-size: var(--snow-fall-size, 1em);
+  }
+  :host(:not([text])) * {
+      width: var(--snow-fall-size, 10px);
+      height: var(--snow-fall-size, 10px);
+      background: var(--snow-fall-color, rgba(255,255,255,.5));
+      border-radius: 50%;
+  }
+  `);let e={width:100,height:100},s={x:"vw",y:"vh"};l==="element"&&(e={width:this.firstElementChild.clientWidth,height:this.firstElementChild.clientHeight},s={x:"px",y:"px"});for(let o=1;o<=i;o++){let a=t.random(1,100)*e.width/100,h=t.random(-10,10)*e.width/100,r=Math.round(t.random(30,100)),d=r*e.height/100,c=e.height,m=t.random(1,1e4)*1e-4,f=t.random(10,30),p=t.random(0,30)*-1;n.push(`
+  :nth-child(${o}) {
+      opacity: ${t.random(0,1e3)*.001};
+      transform: translate(${a}${s.x}, -10px) scale(${m});
+      animation: fall-${o} ${f}s ${p}s linear infinite;
+  }
+  
+  @keyframes fall-${o} {
+      ${r}% {
+          transform: translate(${a+h}${s.x}, ${d}${s.y}) scale(${m});
+      }
+  
+      to {
+          transform: translate(${a+h/2}${s.x}, ${c}${s.y}) scale(${m});
+      }
+  }`)}return n.join(`
+`)}connectedCallback(){if(this.shadowRoot||!("replaceSync"in CSSStyleSheet.prototype)||new Date().getMonth()!==11)return;let n=parseInt(this.getAttribute(t.attrs.count))||100,e;this.hasAttribute(t.attrs.mode)?e=this.getAttribute(t.attrs.mode):(e=this.firstElementChild?"element":"page",this.setAttribute(t.attrs.mode,e));let s=new CSSStyleSheet;s.replaceSync(this.generateCss(e,n));let o=this.attachShadow({mode:"open"});o.adoptedStyleSheets=[s];let a=document.createElement("div"),h=this.getAttribute(t.attrs.text);a.innerText=h||"";for(let r=0,d=n;r<d;r++)o.appendChild(a.cloneNode(!0));o.appendChild(document.createElement("slot"))}}customElements.define("snow-fall",t);</script> <snow-fall></snow-fall> <!-- TODO: mobile navbar --> <!-- TODO: make this stay in the middle of the screen --> <div class="block md:hidden mt-2 text-center *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/" class="text-3xl p-1">Evan Whelan</a> <div class="flex justify-evenly gap-1 *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/projects" class="text-xl w-full p-1">Projects</a> <a href="/posts" class="text-xl w-full p-1">Blog</a> <a href="/hobbies" class="text-xl w-full p-1">Hobbies</a> </div> </div> <div class="md:grid grid-cols-17 w-full max-w-[92rem] gap-8"> <div class="col-span-4 h-screen hidden md:flex flex-col justify-center *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/" class="text-5xl p-1">Evan Whelan</a> <a href="/projects" class="text-2xl w-full p-1">Projects</a> <a href="/posts" class="text-2xl w-full p-1">Blog</a> <a href="/hobbies" class="text-2xl w-full p-1">Hobbies</a> </div> <div class="col-span-9 flex w-full items-center text-center md:text-left py-5"> <div class="w-full">  <p class="text-4xl mb-2">
+My Hobbies
+</p> <a class="text-xl md:justify-start items-center my-1 p-0.5 w-fit" href="/hobbies/vinyl">
+My Record Collection
+</a>  </div> </div> <div class="hidden md:block col-span-4"></div> </div> </body></html>

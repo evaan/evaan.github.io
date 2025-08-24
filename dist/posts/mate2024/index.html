@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"> <head><title>Evan Whelan - Eastern Edge 2024 Recap</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8"><link rel="icon" href="https://avatars.githubusercontent.com/u/41494790?v=4"><!-- TODO: meta tags for embed and maybe seo if thats a thing --><link rel="stylesheet" href="/_astro/mate2024.BNSOUIb3.css">
+<link rel="stylesheet" href="/_astro/mate2024.COXD5gRV.css"></head> <body class="md:flex min-h-screen justify-center bg-neutral-800 text-neutral-200 font-mulish overflow-x-hidden px-2"> <script type="module">class t extends HTMLElement{static random(l,i){return l+Math.floor(Math.random()*(i-l)+1)}static attrs={count:"count",mode:"mode",text:"text"};generateCss(l,i){let n=[];n.push(`
+  :host([mode="element"]) {
+      display: block;
+      position: relative;
+      overflow: hidden;
+  }
+  :host([mode="page"]) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+  }
+  :host([mode="page"]),
+  :host([mode="element"]) > * {
+      pointer-events: none;
+  }
+  :host([mode="element"]) ::slotted(*) {
+      pointer-events: all;
+  }
+  * {
+      position: absolute;
+  }
+  :host([text]) * {
+      font-size: var(--snow-fall-size, 1em);
+  }
+  :host(:not([text])) * {
+      width: var(--snow-fall-size, 10px);
+      height: var(--snow-fall-size, 10px);
+      background: var(--snow-fall-color, rgba(255,255,255,.5));
+      border-radius: 50%;
+  }
+  `);let e={width:100,height:100},s={x:"vw",y:"vh"};l==="element"&&(e={width:this.firstElementChild.clientWidth,height:this.firstElementChild.clientHeight},s={x:"px",y:"px"});for(let o=1;o<=i;o++){let a=t.random(1,100)*e.width/100,h=t.random(-10,10)*e.width/100,r=Math.round(t.random(30,100)),d=r*e.height/100,c=e.height,m=t.random(1,1e4)*1e-4,f=t.random(10,30),p=t.random(0,30)*-1;n.push(`
+  :nth-child(${o}) {
+      opacity: ${t.random(0,1e3)*.001};
+      transform: translate(${a}${s.x}, -10px) scale(${m});
+      animation: fall-${o} ${f}s ${p}s linear infinite;
+  }
+  
+  @keyframes fall-${o} {
+      ${r}% {
+          transform: translate(${a+h}${s.x}, ${d}${s.y}) scale(${m});
+      }
+  
+      to {
+          transform: translate(${a+h/2}${s.x}, ${c}${s.y}) scale(${m});
+      }
+  }`)}return n.join(`
+`)}connectedCallback(){if(this.shadowRoot||!("replaceSync"in CSSStyleSheet.prototype)||new Date().getMonth()!==11)return;let n=parseInt(this.getAttribute(t.attrs.count))||100,e;this.hasAttribute(t.attrs.mode)?e=this.getAttribute(t.attrs.mode):(e=this.firstElementChild?"element":"page",this.setAttribute(t.attrs.mode,e));let s=new CSSStyleSheet;s.replaceSync(this.generateCss(e,n));let o=this.attachShadow({mode:"open"});o.adoptedStyleSheets=[s];let a=document.createElement("div"),h=this.getAttribute(t.attrs.text);a.innerText=h||"";for(let r=0,d=n;r<d;r++)o.appendChild(a.cloneNode(!0));o.appendChild(document.createElement("slot"))}}customElements.define("snow-fall",t);</script> <snow-fall></snow-fall> <!-- TODO: mobile navbar --> <!-- TODO: make this stay in the middle of the screen --> <div class="block md:hidden mt-2 text-center *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/" class="text-3xl p-1">Evan Whelan</a> <div class="flex justify-evenly gap-1 *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/projects" class="text-xl w-full p-1">Projects</a> <a href="/posts" class="text-xl w-full p-1">Blog</a> <a href="/hobbies" class="text-xl w-full p-1">Hobbies</a> </div> </div> <div class="md:grid grid-cols-17 w-full max-w-[92rem] gap-8"> <div class="col-span-4 h-screen hidden md:flex flex-col justify-center *:no-underline *:text-neutral-200 *:bg-neutral-800 *:hover:text-neutral-800 *:active:text-neutral-800 *:hover:bg-neutral-200 *:active:bg-neutral-200"> <a href="/" class="text-5xl p-1">Evan Whelan</a> <a href="/projects" class="text-2xl w-full p-1">Projects</a> <a href="/posts" class="text-2xl w-full p-1">Blog</a> <a href="/hobbies" class="text-2xl w-full p-1">Hobbies</a> </div> <div class="col-span-9 flex w-full items-center text-center md:text-left py-5"> <div class="w-full">  <div class="flex w-full justify-center items-center"> <div class="prose prose-base prose-invert max-w-xs sm:max-w-3xl"> <h1 class="text-4xl font-bold">Eastern Edge 2024 Recap</h1> <h4 class="mb-8"></h4> <p>Two weeks ago, I competed in the 2024 MATE ROV World Championship with Eastern Edge. and since this years competiton has concluded, it is time to recap this years infrastructure, and discuss ideas for 2025.</p>
+
+<div class="px-1"> <div class="flex items-center justify-center"> <img src="/_astro/mate2024beaumont.BwnIiuJP_1zY5B6.webp" alt="Our ROV for 2024, named Beaumont" width="384" height="302" loading="lazy" decoding="async" class="mb-0"> </div> <p class="text-center mt-0">Our ROV for 2024, named Beaumont</p> </div>
+<h3 id="the-gui">The GUI</h3>
+<p>This year I pitched the idea of using a web-based GUI using React, which ended up becoming the main control interface.
+The GUI did everything we needed: sliders for thruster modifiers, camera control, control profiles, while being very customizable.</p>
+<p>My main concern is that it may have been <strong>too</strong> customizable, where the code became clunky for seemingly no reason. when developing our control profiles, we had created an entire sqlite database, which then caused some issues with connecting to the database on startup, adding time to our run.</p>
+<p>This just feels bloated, and can easily be replaced with importing a JSON file when you open the website or something of the sort.</p>
+<p>The website also seemed to perform poorly, trying to resubscribe to ros topics several times a second for seemingly no reason, importing a json which then connects to ros and initializes all controls would likely be a cleaner and simpler solution.</p>
+<p>This also is a good transition to how we communicate to the bot itself.</p>
+<h3 id="ros-control-shenanigans">ROS (control shenanigans)</h3>
+<p>ROS, which is what we used this year, allows us to send different topics to different programs, which allows us to have debug info, thruster modifiers, controller data, and tooling commands all at the same time, to different nodes on the same machine. ROS was initially considered due to its wide variety of use in the robotics industry, and was kept for its modularity and the ease of expansion.</p>
+<p>Unfortunately ros also had some limitations. officially, ROS only supports python and c++, which is fine until you decide to create a frontend like we did using React. Connecting the React GUI to the ROS network required a ROS library called <a href="https://github.com/RobotWebTools/roslibjs">roslibjs</a> which connects to ROSBridge and allows communication to the ROS network using websockets. This worked pretty well overall, however there was an exponential latency issue which became a big issue. Funnily enough, the issue was identified and a likely fix was created immediately after the competition ended, and will be tested in the near future.</p>
+<p>This latency issue seems to be an issue with our frontend subscribing to topics, as when removing ADC and temperature sensor topics it seemed to work fine. This is likely not a problem with ROS, but an issue with our configuration. The latency issue was a problem earlier on in the year, although during the runs it only started happening about ~10 minutes into a run, which is solved by a simple page refresh.</p>
+<p>ROS also allowed us to have one of the best features that we have developed this year, allowing for a simulation of the rov in a test area allowing for a full simulated run of Beaumont (the ROV). This allowed us to easily calculate thruster math, to ensure that forces are correct, and gave our pilot testing time when the bot was unable to be driven.</p>
+
+<div class="flex"><div class="px-1"> <div class="flex items-center justify-center"> <img src="/_astro/mate2024sim.CpVK-QwE_Z1UDw0E.webp" alt="Control interface piloting simulated ROV" width="1012" height="638" loading="lazy" decoding="async" class="mb-0"> </div> <p class="text-center mt-0">Control interface piloting simulated ROV</p> </div><div class="px-1"> <div class="flex items-center justify-center"> <img src="/_astro/mate2024real.CjUf728x_ZaqC1h.webp" alt="Control interface piloting the actual ROV" width="1012" height="638" loading="lazy" decoding="async" class="mb-0"> </div> <p class="text-center mt-0">Control interface piloting the actual ROV</p> </div></div>
+<h3 id="vertical-profiler">vertical profiler</h3>
+<p>My personal favourite contribution is the firmware for the vertical profiling float. The vertical profiler was a relatively simple PCB, with an ESP32 along with a DC and stepper motor driver (as we didn’t know what motor we were using at the time), and worked pretty well. The firmware i had created was also pretty simple, using an ESP32 dev kit as a receiever and using ESP-NOW to communicate between the profiler and the reciever.</p>
+
+<div class="px-1"> <div class="flex items-center justify-center"> <img src="/_astro/mate2024profiler.DAwEH10u_Z2vj5f1.webp" alt="Profiler CAD model" width="482" height="352" loading="lazy" decoding="async" class="mb-0"> </div> <p class="text-center mt-0">Profiler CAD model</p> </div>
+<p>Unfortunately water does a really good job at blocking 2.4 GHz (or really any lower frequency for that matter) and so we lose connection almost instantly upon deployment. We had two solutions in mind: using LoRa, or just queueing the data and dumping it upon resurface. Considering that LoRa is relatively expensive, and nobody on the team had familiarity with it, we went with the latter.</p>
+<p>The reciever created an access point and web server which a device could connect to, then the user can send a post request to the server, which would then make the reciever communicate to the profiler. The receiver also logs time and graphs depth over time (as required by mission spec) with the profilers pressure sensor, a BlueRobotics <a href="https://bluerobotics.com/store/sensors-cameras/sensors/bar02-sensor-r1-rp">Bar02</a>.</p>
+<p>The profiler worked great out of the water and in shallow pools, although we had issues in Tennessee where the depth sensor data wasn’t being updated, which turned out to be 100% skill issue and was because I had forgotton to actually read the sensor data.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="diff"><code><span class="line"><span style="color:#E1E4E8">void loop() {</span></span>
+<span class="line"><span style="color:#85E89D"><span style="user-select:none">+</span> sensor.read();</span></span>
+<span class="line"><span style="color:#E1E4E8">  ElegantOTA.loop();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>In deep water (which is basically the only thing that matters) however, it sucked up water to lower buoyancy, but when it tried to release water to re-surface the motor which was run on a timer wasn’t long enough to push all the water out under that pressure, which left it stuck at the bottom of the pool.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#F97583">#define</span><span style="color:#B392F0"> TIMEOUT</span><span style="color:#79B8FF"> 19000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">void</span><span style="color:#B392F0"> profile</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">void</span><span style="color:#F97583"> *</span><span style="color:#FFAB70"> parameter</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  profiling </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  message.time </span><span style="color:#F97583">=</span><span style="color:#B392F0"> millis</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">  strcpy</span><span style="color:#E1E4E8">(message.text, </span><span style="color:#9ECBFF">&quot;Profile commencing!&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  esp_now_send</span><span style="color:#E1E4E8">(broadcastAddress, (</span><span style="color:#F97583">uint8_t</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">&amp;</span><span style="color:#E1E4E8">message, </span><span style="color:#F97583">sizeof</span><span style="color:#E1E4E8">(message));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  digitalWrite</span><span style="color:#E1E4E8">(IN1PIN, HIGH);</span></span>
+<span class="line"><span style="color:#79B8FF">  TickType_t</span><span style="color:#E1E4E8"> startTick </span><span style="color:#F97583">=</span><span style="color:#B392F0"> xTaskGetTickCount</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  while</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">digitalRead</span><span style="color:#E1E4E8">(BUTTONPIN) </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">vTaskDelay</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">10</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> portTICK_PERIOD_MS);</span></span>
+<span class="line"><span style="color:#B392F0">  digitalWrite</span><span style="color:#E1E4E8">(IN2PIN, HIGH);</span></span>
+<span class="line"><span style="color:#B392F0">  vTaskDelay</span><span style="color:#E1E4E8">(SINKTIME </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> portTICK_PERIOD_MS);</span></span>
+<span class="line"><span style="color:#B392F0">  digitalWrite</span><span style="color:#E1E4E8">(IN1PIN, LOW);</span></span>
+<span class="line"><span style="color:#6A737D">  //the following line is what was causing the profiler to not release enough water:</span></span>
+<span class="line"><span style="color:#B392F0">  vTaskDelay</span><span style="color:#E1E4E8">(TIMEOUT </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> portTICK_PERIOD_MS);</span></span>
+<span class="line"><span style="color:#B392F0">  digitalWrite</span><span style="color:#E1E4E8">(IN2PIN, LOW);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  profiling </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  message.time </span><span style="color:#F97583">=</span><span style="color:#B392F0"> millis</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">  strcpy</span><span style="color:#E1E4E8">(message.text, </span><span style="color:#9ECBFF">&quot;Profile complete!&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  esp_now_send</span><span style="color:#E1E4E8">(broadcastAddress, (</span><span style="color:#F97583">uint8_t</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">&amp;</span><span style="color:#E1E4E8">message, </span><span style="color:#F97583">sizeof</span><span style="color:#E1E4E8">(message));</span></span>
+<span class="line"><span style="color:#B392F0">  vTaskSuspend</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">xTaskGetCurrentTaskHandle</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Overall, I think that if we fix that issue and assuming profiler is a task for next year, I believe that we can easily get full points for it with a few minor mechanical tweaks.</p>
+<h3 id="electrical">electrical</h3>
+<p>Our electrical system this year consisted of two boards: our Power Board, which took the 48 Volts from the surface, and converted it to 12 and 5 Volts for our components on our second board, codenamed Mega Board.</p>
+
+<div class="px-1"> <div class="flex items-center justify-center"> <img src="/_astro/mate2024megaboard.B4kbyWp-_1V97up.webp" alt="A render of Mega Board in KiCad" width="1520" height="988" loading="lazy" decoding="async" class="mb-0"> </div> <p class="text-center mt-0">A render of Mega Board in KiCad</p> </div>
+<p>Mega Board houses everything the ROV will need, including microcontrollers, motor drivers, as well as the ability to mount a Raspberry Pi and IMU.</p>
+<p>Overall, Mega Board worked great, with any issue being related to things that were not the fault of the board (i.e. our 5V to 3V3 LDO got hit with reverse voltage, causing it to die and kill our PCA9685 and possibly the RP2040?).</p>
+<p>When our PCA9685 dropped out and started spamming random addresses after being overvolted, we had to adapt quickly. our solution was to use the RP2040 which was also installed, to communicate with the thrusters. this ended up being easier, as rather than using a library like Adafruits PCA9685 library, we can just send the 2040 the thruster we want to set, followed by the power we want the thruster to run at.</p>
+<h3 id="whats-the-play-for-next-year">whats the play for next year?</h3>
+<p>This year, we were pretty late when it came to the completion of electrical boards, which gave our pilot less time to practice. when looking at other teams (more specifically winning teams), they would trade off cool new features for a driveable bot completed as soon as possible, giving the pilot more practice to complete all of the mission tasks.</p>
+<p>Completing the ROV as soon as possible allows us to also focus on improving our presentation, technical documentation, and marketing display which are also required for the competition (and also worth a lot of points). I believe that we should wire things by hand (at least for things not regarding power conversion), rather than creating a PCB, allowing for quicker construction time, and completely removing the time that was used for PCB review.</p>
+<p>This is a hot topic among the team right now and will be discussed in the near future, although I do believe that our team could place in the top 3 if we focus on creating an rov as soon as possible, then adding features on top of it, rather than spending months designing a pcb, and waiting on that to arrive to construct the bot. This allows significantly more practice for our pilot, and drastically decreases the stress level towards competition.</p>
+<p>This year we placed ninth out of 29 teams, which is great, but I believe that if the pilot gets more practice, and we get more testing with next years non-ROV device, we can easily do better.</p> </div> </div>  </div> </div> <div class="hidden md:block col-span-4"></div> </div> </body></html>
