@@ -288,5 +288,20 @@
     "title": "Alfredo",
     "artist": "Freddie Gibbs & The Alchemist",
     "cover": "/ref/vinyl/alfredo.png"
+  },
+  {
+    "title": "Debut",
+    "artist": "Björk",
+    "cover": "https://archive.org/download/mbid-bc9c06da-0be8-4e01-93a3-9a41261a8de3/mbid-bc9c06da-0be8-4e01-93a3-9a41261a8de3-35378638607_thumb500.jpg"
+  },
+  {
+    "title": "FUTURE",
+    "artist": "Future",
+    "cover": "https://archive.org/download/mbid-ee884f13-5cef-4ea1-954c-2925cf8594e2/mbid-ee884f13-5cef-4ea1-954c-2925cf8594e2-15972020319_thumb500.jpg"
+  },
+  {
+    "title": "Immunity",
+    "artist": "Clairo",
+    "cover": "https://archive.org/download/mbid-92d4edd2-7540-43e9-8eef-cba124fcf42a/mbid-92d4edd2-7540-43e9-8eef-cba124fcf42a-39958758604_thumb500.jpg"
   }
 ]
