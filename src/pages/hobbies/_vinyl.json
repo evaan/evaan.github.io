@@ -393,5 +393,20 @@
     "title": "Adu 2",
     "artist": "Boldy James & Real Bad Man",
     "cover": "/ref/vinyl/adu-2.png"
+  },
+  {
+    "title": "Enter the Wu-Tang (36 Chambers)",
+    "artist": "Wu-Tang Clan",
+    "cover": "https://archive.org/download/mbid-f711b6b2-1dca-442f-ac69-69009141f60c/mbid-f711b6b2-1dca-442f-ac69-69009141f60c-36026061736_thumb500.jpg"
+  },
+  {
+    "title": "10",
+    "artist": "Westside Gunn",
+    "cover": "https://archive.org/download/mbid-0920042b-7d08-431d-b3ec-9f5408c24981/mbid-0920042b-7d08-431d-b3ec-9f5408c24981-33942955830_thumb500.jpg"
+  },
+  {
+    "title": "The Beatles",
+    "artist": "The Beatles",
+    "cover": "https://archive.org/download/mbid-034e0c73-c2df-328b-861c-3db28217aeed/mbid-034e0c73-c2df-328b-861c-3db28217aeed-4924862361_thumb500.jpg"
   }
 ]
