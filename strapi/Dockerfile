@@ -1,12 +1,11 @@
-FROM node:alpine AS build
+FROM node:22-alpine AS build
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        python3 \
-        make \
-        g++ \
-        git \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    git \
+    libc6-compat
 
 WORKDIR /app
 
@@ -16,16 +15,18 @@ RUN npm ci
 COPY . .
 
 ENV NODE_ENV=production
-RUN npm run build
 
+RUN npm run build
 RUN rm -rf node_modules
 
 
-FROM node:alpine AS production
+FROM node:22-alpine AS production
+
+RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-ENV NODE_ENV=productionddddddddddd
+ENV NODE_ENV=production
 
 COPY --from=build /app ./
 
