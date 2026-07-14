@@ -19,7 +19,7 @@ services:
         STRAPI_URL: https://evaan.dev/strapi
     restart: always
     ports:
-      - "127.0.0.1:1338:80"
+      - "1338:80"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.evaan-website.rule=Host(`evaan.dev`) || Host(`www.evaan.dev`)"
@@ -76,7 +76,7 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       ENCRYPTION_KEY: ${ENCRYPTION_KEY}
     ports:
-      - "127.0.0.1:1337:1337"
+      - "1337:1337"
     volumes:
       - ./strapi-uploads:/app/public/uploads
     labels:
