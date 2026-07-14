@@ -1,0 +1,21 @@
+---
+import { Dropdown } from "../components/Dropdown";
+import Layout from "../layouts/Layout.astro";
+import type { Project, ProjectsResponse } from "../layouts/types/strapi";
+
+const response = await fetch(`${import.meta.env.STRAPI_URL}/api/projects?populate=*`);
+const { data: projects }: ProjectsResponse = await response.json();
+---
+
+<Layout title="Projects">
+  {projects.map((project: Project) => (
+    <Dropdown
+      client:load
+      name={project.name}
+      description={project.description}
+      languages={project.languages.map((language) => ({ name: language.name, colour: language.colour }))}
+      expanded={project.shown}
+      links={project.links.map((link) => ({ name: link.name, url: link.url }))}
+    />
+  ))}
+</Layout>

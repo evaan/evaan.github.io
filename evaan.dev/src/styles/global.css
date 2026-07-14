@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jakarta: "Plus Jakarta Sans";
+}
+
+@layer base {
+  a, #open-email {
+    @apply text-blue-300 bg-zinc-900;
+    @apply underline;
+    &:hover, &:active {
+      @apply text-zinc-900 bg-blue-300;
+    }
+  }
+}
